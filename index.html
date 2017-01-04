@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <base href="http://tal.lipn.univ-paris13.fr/bni/" />
     <meta charset="utf-8">
+    <title>Adam SMITH</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/mdl/material.min.css">
-    <script defer src="css/mdl/material.min.js"></script>
+    <script src="css/mdl/material.min.js"></script>
     <link href="css/style.css" rel="stylesheet">
-  </head>
-  <body>
+</head>
+<body class="sticky-footer">
     <div class="container mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
         <header class="header mdl-layout__header">
             <div class="mdl-layout__header-row">
-                <span id="main-title" class="mdl-layout-title"></span>
+                <span class="mdl-layout-title"></span>
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
                     <img class="adam" src="adam-smith.jpg">
                 </nav>
             </div>
         </header>
-        <main class="content mdl-layout__content">
-            <h4>Bienvenue dans la Bibliothèque Numérique des Ideas</h4>
-            <h3>Adam Smith ou la penseé d'Adam Smith</h3>
-            <form action="#" class="search">
+        <main class="content content-flex mdl-layout__content">
+            <h4 class="center welcome">Bienvenue dans la Bibliothèque Numérique des Idées</h4>
+            <h3 class="center main-title">Adam Smith</h3>
+            <form action="/bni/search/sympathie" class="search" autocomplete="off">
                 <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text"  placeholder="Recherche ...">
+                    <input id="query" class="mdl-textfield__input" type="text" placeholder="Recherche ...">
                 </div>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                <button id="#search" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
                     <label class="mdl-button mdl-js-button mdl-button--icon">
                         <i class="material-icons">search</i>
                     </label>
                     Chercher
                 </button>
                 <br />
-                <br />
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Naviguer</button>
+                    <div class="mdl-textfield mdl-js-textfield" style="visibility: hidden;">
+                        <input class="mdl-textfield__input" type="text" style="visibility: hidden;" >
+                    </div>
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="/bni/nav/" style="margin-left: -26px;">Naviguer</a>
             </form>
         </main>
         <footer class="mdl-mini-footer">
-          <div class="mdl-mini-footer__left-section">
-            <div class="mdl-logo">Financé par le Labex EFL</div>
-          </div>
+            <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logoi really-mini">Financé par le Labex EFL</div>
+            </div>
         </footer>
     </div>
-  </body>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>
