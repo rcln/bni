@@ -25,6 +25,13 @@
     <link href="css/vis.css" rel="stylesheet">
     <script src="js/vis.js"></script>
 
+    <script>
+        var response = <?php $query_string= addslashes($_REQUEST["query"]);
+                        $data = file_get_contents("http://localhost:8081/solr/bni_adam_smith/select?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:'".urlencode($query_string)."'");
+                        echo $data; ?>;
+        var query_string = decodeURI('<?php echo $query_string; ?>');
+    </script>
+
     <script type="text/javascript" src="js/onto.js"></script> 
 </head>
 <body class="" onload="draw();">
@@ -62,12 +69,6 @@
     </div>
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        var response = <?php $query_string= addslashes($_REQUEST["query"]);
-                        $data = file_get_contents("http://localhost:8081/solr/bni_adam_smith/select?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:'".urlencode($query_string)."'");
-                        echo $data; ?>;
-        var query_string = decodeURI('<?php echo $query_string; ?>');
-    </script>
     <script src="js/solr.query.js"></script>
 </body>
 </html>
