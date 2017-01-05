@@ -394,7 +394,7 @@ input.vis-configuration.vis-config-range:focus::-ms-fill-upper {
   left: 0;
   top: 0;
   width: 100%;
-  color: #4d4d4d;
+  color: #fff;
 
   box-sizing: border-box;
 }

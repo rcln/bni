@@ -43,73 +43,73 @@
             {id: 1, label: 'Philosophie morale', group: 13, size : 25, level : 1},
             {id: 2, label: 'Economie', group: 14, size : 25, level : 1},
             {id: 3, label: 'Philosophie  Politique',  group: 15, size : 25, level : -1},
-            {id: 4, label: 'Les écrits épistémologiques\n et esthétiques', group: 16, size : 25, level : -1 }
+            {id: 4, label: 'Les écrits épistémologiques\n et esthétiques', group: 1, size : 25, level : -1 }
         ],
         1: [
             /* node 1 */
             {id: 1, label: 'Philosophie morale', group: 13, size : 35, level : 1},
-                {id: 11, label: 'La sympathie', group: 2, size: 25, level : 2},
-                    {id: 111, label: 'Le transport de  l\'imagination', group: 2, level :3},
-                    {id: 112, label: 'Le principe d\'atténuation', group: 2,level : 3},
-                        {id: 1121, label: 'Les deux vertus', group: 3, level : 4},
-                            {id: 11211, label: 'Amabilité', group: 3, level : 5},
-                            {id: 11212, label: 'Empire sur soie',group: 3, level : 5},
-                        {id:1122, label: 'L\'auto-régulation des passions',group: 13, level : 4},
-                {id: 12, label: 'Les règles morales', group: 4, size: 25, level : 2},
-                    {id: 121, label: 'La convenance', group: 4, level : 3},
-                    {id: 122, label: 'L\'approbation ou le jugement moral', group:4, level : 3},
-                    {id: 123, label: 'La double évaluation', group: 4, level : 3},
-                        {id: 1231, label: 'Motif et conséquence', group: 13, level : 4},
-                        {id: 1232, label: 'Absolu et relatif', group: 13, level : 4},
-                    {id: 124, label: 'Le Spectateur Impartial', group: 4, level : 3},
-                        {id: 1241, label: 'Genèse du SI', group: 13, level : 4},
-                        {id: 1242, label: 'Les contradictions de la symapthie', group: 5, level : 4},
-                            {id: 12421, label: 'Le défaut: règles morales', group: 5,level : 5},
-                            {id: 12422, label: 'L\'excès: la vanité, l\'amour des puissants', group: 5,level : 5},
+                {id: 11, label: 'La sympathie', group: 14, size: 25, level : 2},
+                    {id: 111, label: 'Le transport de  l\'imagination', group: 15, level :3},
+                    {id: 112, label: 'Le principe d\'atténuation', group: 15,level : 3},
+                        {id: 1121, label: 'Les deux vertus', group: 16, level : 4},
+                            {id: 11211, label: 'Amabilité', group: 17, level : 5},
+                            {id: 11212, label: 'Empire sur soie',group: 17, level : 5},
+                        {id:1122, label: 'L\'auto-régulation des passions',group: 16, level : 4},
+                {id: 12, label: 'Les règles morales', group: 14, size: 25, level : 2},
+                    {id: 121, label: 'La convenance', group: 15, level : 3},
+                    {id: 122, label: 'L\'approbation ou le jugement moral', group:15, level : 3},
+                    {id: 123, label: 'La double évaluation', group: 15, level : 3},
+                        {id: 1231, label: 'Motif et conséquence', group: 16, level : 4},
+                        {id: 1232, label: 'Absolu et relatif', group: 16, level : 4},
+                    {id: 124, label: 'Le Spectateur Impartial', group: 15, level : 3},
+                        {id: 1241, label: 'Genèse du SI', group: 16, level : 4},
+                        {id: 1242, label: 'Les contradictions de la symapthie', group: 16, level : 4},
+                            {id: 12421, label: 'Le défaut: règles morales', group: 17,level : 5},
+                            {id: 12422, label: 'L\'excès: la vanité, l\'amour des puissants', group: 17,level : 5},
           ],
           2: [
             /* node 2 */
             {id: 2, label: 'Economie', group: 14, size : 35, level : 1},
-                {id: 21, label: 'L\'échange', group: 6, size: 25, level :2},
-                    {id: 211, label: 'Fondement  de l\'échange', group: 6, level :3},
-                    {id: 212, label: 'Penchant  et   besoin', group: 6, level :3},
-                    {id: 213, label: 'Bienveillance  et  intérêt', group: 6, level :3},
-                    {id: 214, label: 'L\'amélioration  de  son sort', group: 6, level :3},
-                {id: 22, label: 'L\'auto régulation des échanges', group: 7, size: 25, level :2},
-                    {id: 221, label: 'Critique de  la physiocratie', group: 7, level :3},
-                    {id: 222, label: 'Critique  du  mercantilisme', group: 7, level :3},
-                    {id: 223, label: 'Le système de la liberté naturelle', group: 7, level :3},
-                    {id: 224, label: 'La frugalité', group: 7, level :3},
-                {id: 23, label: 'La division  du  travail', group:8, size: 25, level :2},
-                    {id: 231, label: 'La valeur des marchandises', group: 8, level :3},
-                    {id: 232, label: 'la division  sociale  et l\'égalité', group: 8, level :3}
+                {id: 21, label: 'L\'échange', group: 1, size: 25, level :2},
+                    {id: 211, label: 'Fondement  de l\'échange', group: 3, level :3},
+                    {id: 212, label: 'Penchant  et   besoin', group: 3, level :3},
+                    {id: 213, label: 'Bienveillance  et  intérêt', group: 3, level :3},
+                    {id: 214, label: 'L\'amélioration  de  son sort', group: 3, level :3},
+                {id: 22, label: 'L\'auto régulation des échanges', group: 1, size: 25, level :2},
+                    {id: 221, label: 'Critique de  la physiocratie', group: 3, level :3},
+                    {id: 222, label: 'Critique  du  mercantilisme', group: 3, level :3},
+                    {id: 223, label: 'Le système de la liberté naturelle', group: 3, level :3},
+                    {id: 224, label: 'La frugalité', group: 3, level :3},
+                {id: 23, label: 'La division  du  travail', group: 1, size: 25, level :2},
+                    {id: 231, label: 'La valeur des marchandises', group: 3, level :3},
+                    {id: 232, label: 'la division  sociale  et l\'égalité', group: 3, level :3}
           ],
           3: [
             /* node 3 */
             {id: 3, label: 'Philosophie  Politique',  group: 15, size : 35, level : 1},
-                {id: 31, label: 'sympathie  et  société', group: 9, size: 25, level :2},
-                    {id: 311, label: 'La sociabilité', group: 9, level :3},
-                    {id: 312, label: 'Les limites  de la  sympathie', group: 9, level :3},
-                    {id: 313, label: 'La critique de l\'état de nature  et du contrat', group: 9, level :3},
-                    {id: 314, label: 'Le principe  de proximité', group: 9, level :3},
-                {id: 32, label: 'L\'Etat',  group: 10, size: 25, level :2},
-                    {id: 321, label: 'Justice  et  vengeance', group: 10, level :3},
-                    {id: 322, label: 'Les règles  de  justice', group: 10, level :3},
-                    {id: 323, label: 'Critiques  de  l\'Etat', group: 10, level :3},
-                    {id: 324, label: 'Fonction  négative  de l\'Etat', group: 10, level :3},
-                {id: 33, label: 'La main  invisible', group: 10, size: 25, level :2},
+                {id: 31, label: 'sympathie  et  société', group: 7, size: 25, level :2},
+                    {id: 311, label: 'La sociabilité', group: 6, level :3},
+                    {id: 312, label: 'Les limites  de la  sympathie', group: 6, level :3},
+                    {id: 313, label: 'La critique de l\'état de nature  et du contrat', group: 6, level :3},
+                    {id: 314, label: 'Le principe  de proximité', group: 6, level :3},
+                {id: 32, label: 'L\'Etat',  group: 7, size: 25, level :2},
+                    {id: 321, label: 'Justice  et  vengeance', group: 6, level :3},
+                    {id: 322, label: 'Les règles  de  justice', group: 6, level :3},
+                    {id: 323, label: 'Critiques  de  l\'Etat', group: 6, level :3},
+                    {id: 324, label: 'Fonction  négative  de l\'Etat', group: 6, level :3},
+                {id: 33, label: 'La main  invisible', group: 7, size: 25, level :2},
             ],
           4: [
             /* node 4 */
-            {id: 4, label: 'Les écrits  épistémologiques  et esthétiques', group: 16, size : 35, level : 1 },
-                {id: 41, label: 'histoire  de l\'astronomie', group: 11, size: 25, level :2},
+            {id: 4, label: 'Les écrits  épistémologiques  et esthétiques', group: 1, size : 35, level : 1 },
+                {id: 41, label: 'histoire  de l\'astronomie', group: 15, size: 25, level :2},
                     {id: 411, label: 'La surprise,  l\'étonnement', group: 11, level :3},
                     {id: 412, label: 'Les liaisons  imaginatives', group: 11, level :3},
                     {id: 413, label: 'La main  invisible dans le champ  scientifique', group: 11, level :3},
-                {id: 42, label: 'Esthétique', group: 12, size: 25, level :2},
-                    {id: 421, label: 'L\'imitation', group: 12, level :3},
-                    {id: 422, label: 'La musique', group: 12, level :3},
-                    {id: 423, label: 'L\'origine du langage', group: 12, level :3}
+                {id: 42, label: 'Esthétique', group: 15, size: 25, level :2},
+                    {id: 421, label: 'L\'imitation', group: 11, level :3},
+                    {id: 422, label: 'La musique', group: 11, level :3},
+                    {id: 423, label: 'L\'origine du langage', group: 11, level :3}
           ]
     };
     
@@ -203,16 +203,23 @@ var options = {
             height: '100%',
             nodes: {
                 shape: 'dot',
-                borderWidth: 2,
+                borderWidth: 0,
                 fixed: true,
                 scaling: {
                     min: 10,
                     max: 30,
+                },
+                font: {
+                    size: 15
                 }
+
             },
             edges: {
-                smooth: true,
-                arrows: {to : true }
+                smooth: false,
+                borderWidth: 1,
+                hoverWidth: 0,
+                arrows: {to : true },
+                color: '#ffffff',
             },
             
 
@@ -235,7 +242,6 @@ var options = {
 
             //highlightNearest :true,
             //multiselect: true
-
         };
 
 network = new vis.Network(container, data, options);
@@ -243,21 +249,26 @@ network = new vis.Network(container, data, options);
 network.fit(nodes);
 
 //END Vis.js group example
-
-
 network.on("click", function(e) {
     //Zoom only on single node clicks, zoom out otherwise
-     //network.fit(e.nodes);
-    if( e.nodes.length > 0 && e.nodes[0] == 11 ){
-        window.location = "http://tal.lipn.univ-paris13.fr/bni/search/sympathie/";
+    //network.fit(e.nodes);
+    //if( e.nodes.length > 0 && e.nodes[0] == 11 ){
+    var nodeId = e.nodes[0];
+    $(document).click();
+    if( e.nodes.length > 0 && nodeId > 4 ){
+        for(na_i in nodes_all){
+            for(node_properties in nodes_all[na_i]){
+                console.assert(nodeId != nodes_all[na_i][node_properties].id, nodeId, nodes_all[na_i][node_properties].label );
+                search_string = encodeURI(nodes_all[na_i][node_properties].label);
+                //window.location = "http://tal.lipn.univ-paris13.fr/bni/search/" +  search_string;
+            }
+        }
     }
-
 
     if (e.nodes.length !== 1) {
       network.fit();
       return;
     }
-    var nodeId = e.nodes[0];
     //Find out what group the node belongs to
     var group = getGroup(nodeId);
 
@@ -269,10 +280,10 @@ network.on("click", function(e) {
     }
     
     //TODO: How do you want to handle ungrouped nodes?
-    if (group === undefined) return;
+    /*if (group === undefined) return;
     var groupNodes = getGroupNodes(group);
     network.fit({
       nodes: groupNodes
     });
-   
+   */
 });
