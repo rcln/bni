@@ -251,10 +251,9 @@ network.fit(nodes);
 //END Vis.js group example
 network.on("click", function(e) {
     //Zoom only on single node clicks, zoom out otherwise
-    //network.fit(e.nodes);
+    network.fit(e.nodes);
     //if( e.nodes.length > 0 && e.nodes[0] == 11 ){
     var nodeId = e.nodes[0];
-    $(document).click();
     if( e.nodes.length > 0 && nodeId > 4 ){
         for(na_i in nodes_all){
             for(node_properties in nodes_all[na_i]){
@@ -280,10 +279,10 @@ network.on("click", function(e) {
     }
     
     //TODO: How do you want to handle ungrouped nodes?
-    /*if (group === undefined) return;
+    if (group === undefined) return;
     var groupNodes = getGroupNodes(group);
     network.fit({
       nodes: groupNodes
     });
-   */
+   
 });

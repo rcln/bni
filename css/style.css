@@ -92,8 +92,15 @@ nav.mdl-navigation {
 #navigation {
     width: 100%;
     /*background-color: white;*/
-    min-height: 50vh;
-    height: 50vh;
+    min-height: 60vh;
+    height: 60vh;
+}
+
+#onto {
+    width: 100%;
+    /*background-color: white;*/
+    min-height: 60vh;
+    height: 700px;
 }
 
 /** Sticky Footer **/

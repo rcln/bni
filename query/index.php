@@ -25,8 +25,9 @@
     <link href="css/vis.css" rel="stylesheet">
     <script src="js/vis.js"></script>
 
+    <script type="text/javascript" src="js/onto.js"></script> 
 </head>
-<body class="">
+<body class="" onload="draw();">
     <div class="container mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
         <header class="header mdl-layout__header">
             <div class="mdl-layout__header-row">
@@ -47,8 +48,7 @@
                             <div id="works">
                             </div>
                         <h4 class="title-bold mdl-color-text--orange-500">Concepts philosophique</h4>
-                        <div id="navigation">
-                            <script type="text/javascript" src="js/site-sym.js"></script> 
+                        <div id="onto">
                         </div> 
                      </div>
                 </div>

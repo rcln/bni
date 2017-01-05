@@ -17,7 +17,6 @@ function draw() {
     edges = [];
     var connectionCount = [];
 
-
 // Add nodes
 nodes.push({id: 'Abundance', label:'abundance'});
 nodes.push({id: 'Accordance', label:'accordance'});
@@ -417,13 +416,86 @@ edges.push({from: 'imagination', to: 'Surprise_happiness'});
 edges.push({from: 'imagination', to: 'emotion'});
 edges.push({from: 'imagination', to: 'faculty'});
 
+    underscore_re = new RegExp("_", "g");
+    target = "sympathy";
+    new_set_nodes = {};
+    new_set_edges = {};
+    for(n in nodes){
+        if(nodes[n].id.toLowerCase().replace(underscore_re, " ") == target.toLowerCase().replace(underscore_re, " ")){
+            new_set_nodes[n] = nodes[n];
+            break;
+        }
+    }
+
+    new_nodes = false;
+    for(n_test in new_set_nodes){
+        new_nodes = true;
+    }
+
+
+    while(new_nodes || new_edges){
+        new_nodes = false;
+        new_edges = false;
+        for(ed in edges){
+            cur_edge = edges[ed];
+            cur_edge_str = cur_edge.from;
+            cur_edge_to_str = cur_edge.to;
+            for(n in new_set_nodes){
+                cur_node = new_set_nodes[n];
+                cur_node_str = cur_node.id;
+                if(cur_edge_str == cur_node_str){
+                    if(typeof new_set_edges[ed] == 'undefined'){
+                        new_edges = true;
+                    }
+                    new_set_edges[ed] = cur_edge;
+                    for(_node in nodes){
+                        cur_new_node = nodes[_node];
+                        cur_new_node_str = cur_new_node.id;
+                        if(cur_edge_to_str == cur_new_node_str){
+                            if(typeof new_set_nodes[_node] == 'undefined'){
+                                new_nodes = true;
+                            }
+                            new_set_nodes[_node] = cur_new_node;
+                        }else{
+                        }
+                        
+                    }
+
+                }
+            }
+        }
+    }
+
+    var keys = [];
+    for(var k in new_set_nodes) keys.push(k);
+    keys = keys.sort(function(a, b){ return a-b});
+
+    list_nodes = [];
+    list_edges = [];
+    for(k in keys){
+        nsn = keys[k];
+        list_nodes.push(new_set_nodes[nsn])
+    }
+
+    var keys = [];
+    for(var k in new_set_edges) keys.push(k);
+    keys = keys.sort(function(a, b){ return a-b});
+    for(k in keys){
+        nse = keys[k];
+        list_edges.push(new_set_edges[nse])
+    }
+
+
+    console.log(list_nodes, list_edges);
+
 // create a network
-    var container = document.getElementById('mynetwork');
+    var container = document.getElementById('onto');
+
 
     // provide the data in the vis format
     var data = {
-        nodes: nodes,
-        edges: edges
+        nodes: list_nodes,
+        edges: list_edges
     };
 
     var options = {
@@ -487,3 +559,5 @@ edges.push({from: 'imagination', to: 'faculty'});
     // initialize your network!
     var network = new vis.Network(container, data, options);
 }
+
+
