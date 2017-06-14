@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <base href="http://tal.lipn.univ-paris13.fr/bni/" />
+    <base href="/bni/" />
     <meta charset="utf-8">
     <title>Adam SMITH</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,21 +12,26 @@
 </head>
 <body class="sticky-footer">
     <div class="container mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
-        <header class="header mdl-layout__header">
-            <div class="mdl-layout__header-row">
+        <header class="header-welcome mdl-layout__header">
+            <h4 class="center welcome">Bienvenue dans la Bibliothèque Numérique des Idées</h4>
+            <!--div class="mdl-layout__header-row">
                 <span class="mdl-layout-title"></span>
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
                     <img class="adam" src="adam-smith.jpg">
                 </nav>
-            </div>
+            </div-->
         </header>
         <main class="content content-flex mdl-layout__content">
-            <h4 class="center welcome">Bienvenue dans la Bibliothèque Numérique des Idées</h4>
-            <h3 class="center main-title">Adam Smith</h3>
+            <div class="header-img-avatar">
+                <div class="img-container">
+                    <img class="img-avatar" src="adam-smith.jpg" style="margin-left: -4vh;">
+                </div>
+                <h3 class="center main-title">Adam Smith</h3>
+            </div>
             <form action="/bni/search/" class="search" autocomplete="off">
                 <div class="mdl-textfield mdl-js-textfield">
-                    <input id="query" class="mdl-textfield__input" type="text" placeholder="Recherche ...">
+                    <input id="query" class="mdl-textfield__input query-welcome" type="text" placeholder="Recherche ...">
                 </div>
                 <button id="search" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
                     <label class="mdl-button mdl-js-button mdl-button--icon">

@@ -1,8 +1,8 @@
 body {
     background-color: #2a7c92;
 }
-img.adam {
-    height: 100%;
+div.container {
+    background-color: #efefef !important;
 }
 header.header {
     box-shadow: none !important;
@@ -16,21 +16,32 @@ footer.mdl-mini-footer {
 main.content {
     width: 90%;
     margin: auto;
+    background-color: white; 
 }
 a {
     color: white;
     text-decoration: none;
     font-size: 90%;
 }
-.welcome {
-    color: yellow;
+
+.content .welcome {
+    font-size: 5vh;
 }
-.main-title {
+
+.welcome {
     color: white;
+    margin: 3vh 0px;    
+    height: 90%; 
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 .center {
     text-align: center;
 }
+
+
 /** Search **/
 .search {
     text-align: center;
@@ -58,34 +69,93 @@ nav .search .mdl-textfield {
 nav.mdl-navigation {
     height: 100% !important;
 }
+
+.header-welcome {
+    height: 30vh !important;
+}
+
+.query-welcome {
+    background-color: #fff;
+    border: 1px solid #a2a9b1;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 0 0 1px #fff;
+    -moz-box-shadow: inset 0 0 0 1px #fff;
+    box-shadow: inset 0 0 0 1px #fff;
+    padding: .5em;
+    vertical-align: middle;
+}
+
+main .header-img-avatar {
+    margin: 5vh 0vh;
+}
+
+.header-img-avatar .img-container {
+    border-radius: 50%;
+    width: 15vh;
+    height: 15vh;
+    overflow: hidden;
+    background-color: #ccc;
+}
+
+.img-avatar {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-title {
+    font-size: 6vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.query-from {
+    text-align: right;
+}
+
 @media screen and (orientation:portrait) {
-    .header {
-        margin: 2vh 0vh;
-        height: 14vh !important;
-    }
-    .content .welcome {
-        font-size: 3vh;
-    }
-    .main-title {
+    h4.welcome {
         font-size: 4vh;
     }
-    .welcome, .main-title, .search {
-        margin: 3vh 0px;    
+
+    .header {
+        height: 18vh !important;
+    }
+
+    .header-img-avatar .img-container {
+        margin: auto;
+        display:flex;
+    }
+    .main-title {
+        display:flex;
+        width:100%;
     }
 }
 @media screen and (orientation:landscape) {
-    .header {
-        margin: 2vh 0vh;
-        height: 12vh !important;
-    }
-    .content .welcome {
-        font-size: 5vh;
-    }
-    .main-title {
+    h4.welcome {
         font-size: 6vh;
     }
-    .welcome, .main-title, .search {
-        margin: 3.5vh 0px;    
+    .header {
+        height: 18vh !important;
+    }
+
+    .header-img-avatar {
+        text-align: center;
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2vh;
+    }
+
+    .header-img-avatar .img-container {
+        display: inline-flex;
+    }
+    .main-title {
+        display: inline-flex;
+        margin-left: 2vh;
     }
 }
 /** Graph **/
@@ -97,7 +167,7 @@ nav.mdl-navigation {
 }
 
 #onto {
-    width: 100%;
+    width: 90%;
     /*background-color: white;*/
     min-height: 60vh;
     height: 700px;

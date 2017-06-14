@@ -219,7 +219,7 @@ var options = {
                 borderWidth: 1,
                 hoverWidth: 0,
                 arrows: {to : true },
-                color: '#ffffff',
+                color: '#bfbfbf',
             },
             
 

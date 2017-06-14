@@ -417,8 +417,8 @@ edges.push({from: 'imagination', to: 'emotion'});
 edges.push({from: 'imagination', to: 'faculty'});
 
     underscore_re = new RegExp("_", "g");
-    console.log(query_string);
-    target = query_string;
+    target = (query_string == "sympathie")? "sympathy" : query_string ;
+    console.log(target);
     new_set_nodes = {};
     new_set_edges = {};
     for(n in nodes){

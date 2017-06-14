@@ -58,11 +58,14 @@ $(function(){
         _section_id = 0;
         section_pages = {};
         for(title in all){
-            render_works += '<h5 class="mdl-color-text--white">' + title + '</h5>';
+            //render_works += '<h5 class="mdl-color-text--white">' + title + '</h5>';
+            render_works += '<h5 class="">' + title + '</h5>';
             render_works += '<ul>';
                 for(section in all[title]){
+                    there_is_a_section = true;
                     render_works += '   <li class="bni-list">' + section.replace(/\d\n?$/, "") + ' p. <span id="section' + (++_section_id) + '"></span>';
                     for(chapter in all[title][section]){
+                        there_is_a_chapter = true;
                         render_works += '   <ul class="chapter">';
                         render_works += '       <li class="bni-list">' + chapter.replace(/\d\n?$/, "");
                         render_works += '           <ul class="subcontent" style="display: none;">';
@@ -84,7 +87,12 @@ $(function(){
                         render_works += '       </li>';
                         render_works += '   </ul>';
                     }
+                    if(typeof there_is_a_chapter == 'undefined'){
+                        break;    
+                    }
                     render_works += '</li>';
+                }
+                if(typeof there_is_a_section == 'undefined'){
                 }
             render_works += '</ul>';
         }

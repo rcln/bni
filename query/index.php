@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <base href="http://tal.lipn.univ-paris13.fr/bni/" />
+    <base href="/bni/" />
     <meta charset="utf-8">
     <title>Adam SMITH</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
 
     <script>
         var response = <?php $query_string= addslashes($_REQUEST["query"]);
-                        $data = file_get_contents("http://localhost:8081/solr/bni_adam_smith/select?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:'".urlencode($query_string)."'");
+                        $data = file_get_contents("http://localhost:8080/solr/bni_adam_smith/select?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:'".urlencode($query_string)."'");
                         echo $data; ?>;
         var query_string = decodeURI('<?php echo $query_string; ?>');
     </script>
@@ -41,21 +41,29 @@
                 <span class="mdl-layout-title"></span>
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
-                    <img class="adam" src="adam-smith.jpg">
+                    <div class="header-img-avatar">
+                        <div class="img-container">
+                            <img class="img-avatar" src="adam-smith.jpg" style="margin-left: -4vh;">
+                        </div>
+                    </div>
                 </nav>
             </div>
         </header>
-        <main class="mdl-layout__content">
-            <h4 class="center welcome">Immersion dans l'oeuvre d'Adam SMITH</h4>
+        <main class="content mdl-layout__content">
+            <h2 class="center">Immersion dans l'oeuvre d'Adam SMITH</h2>
             <section class="mdl-grid">
                 <div class="mdl-card mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-                    <div class="mdl-card__supporting-text">
-                            <span class="mdl-color-text--blue-grey-900">Résultats:</span> <span class="mdl-color-text--blue-grey-900 title-bold"><?php echo $_REQUEST["query"];?></span>
+                    <div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col ">
+                            <div class="query-from">
+                                <span class="mdl-color-text--blue-grey-900">Résultats:</span> 
+                                <span class="mdl-color-text--blue-grey-900 title-bold"><?php echo $_REQUEST["query"];?></span>
+                            </div>
                             <h4 class="title-bold mdl-color-text--orange-500">Par oeuvre</h4>
                             <div id="works">
                             </div>
                         <h4 class="title-bold mdl-color-text--orange-500">Concepts philosophique</h4>
-                        <div id="onto">
+                        <div class="mdl-card mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                            <div id="onto"></div>
                         </div> 
                      </div>
                 </div>
