@@ -1,1 +1,1 @@
-New branch with polymer, Material Design, D3.js 
+New branch with Angular 2, Material Design, D3.js 
