@@ -1,11 +1,8 @@
 RewriteEngine On
 
-RewriteRule search/(.+)/$ /bni/query/index.php?query=$1 [L]
-RewriteRule search/(.+)$ /bni/query/index.php?query=$1 [L]
-RewriteRule search/?$ /bni/ [R]
-
-RewriteRule search2/(.+)/$ /bni/query/index2.php?query=$1 [L]
-RewriteRule search2/(.+)$ /bni/query/index2.php?query=$1 [L]
+RewriteRule search/(.+)/$ /query/index.php?query=$1 [L]
+RewriteRule search/(.+)$ /query/index.php?query=$1 [L]
+RewriteRule search/?$ / [R]
 
 
 <IfModule mod_headers.c>

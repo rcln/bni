@@ -121,7 +121,7 @@ main .header-img-avatar {
     }
 
     .header {
-        height: 18vh !important;
+        height: 10vh !important;
     }
 
     .header-img-avatar .img-container {
@@ -138,7 +138,7 @@ main .header-img-avatar {
         font-size: 6vh;
     }
     .header {
-        height: 18vh !important;
+        height: 10vh !important;
     }
 
     .header-img-avatar {

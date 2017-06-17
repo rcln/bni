@@ -11,8 +11,6 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-1.10.2.js"></script>
 
-    <link href="css/vis.css" rel="stylesheet">
-    <script src="js/vis.js"></script>
     <style>
     footer.mdl-mini-footer {
         padding: 32px 16px !important;
@@ -45,11 +43,40 @@
                 </nav>
             </div>
         </header>
+        <style>
+            .node circle {
+                fill: #2a7c92;
+            }
+            .node text {
+                font: 12pt sans-serif;
+            }
+            .node--internal circle {
+                fill: #555;
+            }
+            .node--internal text {
+              text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+            }
+            .node circle#circle-root {
+            }
+            .link {
+              fill: none;
+              stroke: #555;
+              stroke-opacity: 0.4;
+              stroke-width: 1.5px;
+            }
+            #back-to-graph {
+                margin-top: -100px;
+                margin-left: 10px;        
+            }
+        </style>
         <main class="content content-flex">
             <h4 class="center">Immersion dans l'oeuvre d'Adam SMITH</h4>
-            <div id="navigation">
-                <script type="text/javascript" src="js/site.js"></script> 
-            </div> 
+            <svg id="navigation"></svg>
+            <button id="back-to-graph" class="mdl-button mdl-js-button mdl-button--fab" style="display: none;">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            <script src="//d3js.org/d3.v4.min.js"></script>
+            <script src="nav/navigation.d3.js"></script>
         </main>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
