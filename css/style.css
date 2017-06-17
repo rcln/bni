@@ -44,7 +44,6 @@ a {
 
 /** Search **/
 .search {
-    text-align: center;
 }
 .search > div {
     padding: 0px;
@@ -62,6 +61,18 @@ a {
 nav .search .mdl-textfield {
     color: black;    
 }
+
+.search--primary {
+    text-align: center;
+}
+
+.search--secondary {
+    text-align: right;
+}
+
+
+
+
 .mdl-layout__header-row {
     height: 100%;
     margin: 0px !important;
@@ -71,7 +82,7 @@ nav.mdl-navigation {
 }
 
 .header-welcome {
-    height: 30vh !important;
+    height: 25vh !important;
 }
 
 .query-welcome {

@@ -26,20 +26,10 @@
         <header class="header mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <span class="mdl-layout-title">
+                    <a href="/bni/">Bienvenue dans la Bibliothèque Numérique des Idées</a>
                 </span>
                 <div class="mdl-layout-spacer"></div>
                 <nav class="mdl-navigation">
-                    <form action="/bni/search/" class="search" autocomplete="off">
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input id="query" class="mdl-textfield__input" type="text" placeholder="Recherche">
-                        </div>
-                        <button id="search" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-                            <label class="mdl-button mdl-js-button mdl-button--icon">
-                                <i class="material-icons">search</i>
-                            </label>
-                            Chercher
-                        </button>
-                    </form>
                 </nav>
             </div>
         </header>
@@ -70,13 +60,28 @@
             }
         </style>
         <main class="content content-flex">
-            <h4 class="center">Immersion dans l'oeuvre d'Adam SMITH</h4>
-            <svg id="navigation"></svg>
-            <button id="back-to-graph" class="mdl-button mdl-js-button mdl-button--fab" style="display: none;">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            <script src="//d3js.org/d3.v4.min.js"></script>
-            <script src="nav/navigation.d3.js"></script>
+                <div class="mdl-grid">
+                    <div class="mdl-cell--6-col"><h5>Immersion dans l'oeuvre d'Adam SMITH</h5></div>
+                    <div class="mdl-cell--6-col">
+                        <form action="/bni/search/" class="search search--secondary" autocomplete="off">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input id="query" class="mdl-textfield__input" type="text" placeholder="Recherche">
+                            </div>
+                            <button id="search" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                                <label class="mdl-button mdl-js-button mdl-button--icon">
+                                    <i class="material-icons">search</i>
+                                </label>
+                                Chercher
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <svg id="navigation"></svg>
+                <button id="back-to-graph" class="mdl-button mdl-js-button mdl-button--fab" style="display: none;">
+                    <i class="material-icons">arrow_back</i>
+                </button>
+                <script src="//d3js.org/d3.v4.min.js"></script>
+                <script src="nav/navigation.d3.js"></script>
         </main>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
