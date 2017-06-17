@@ -45,10 +45,10 @@ a {
 /** Search **/
 .search {
 }
-.search > div {
+.search--primary > div {
     padding: 0px;
 }
-.search > div > input {
+.search--primary > div > input {
     background-color: white;
     padding: 10px;
 }

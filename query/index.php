@@ -3,7 +3,7 @@
 <head>
     <base href="/bni/" />
     <meta charset="utf-8">
-    <title>Adam SMITH</title>
+    <title>Bibliothèque Numérique des Idées</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/mdl/material.min.css">
@@ -22,19 +22,10 @@
          }
 
     </style>
-    <link href="css/vis.css" rel="stylesheet">
-    <script src="js/vis.js"></script>
 
-    <script>
-        var response = <?php $query_string= addslashes($_REQUEST["query"]);
-                        $data = file_get_contents("http://localhost:8080/solr/bni_adam_smith/select?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:'".urlencode($query_string)."'");
-                        echo $data; ?>;
-        var query_string = decodeURI('<?php echo $query_string; ?>');
-    </script>
-
-    <script type="text/javascript" src="js/onto.js"></script> 
+    <!--script type="text/javascript" src="js/onto.js"></script--> 
 </head>
-<body class="" onload="draw();">
+<body class="">
     <div class="container mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
         <header class="header mdl-layout__header">
             <div class="mdl-layout__header-row">
@@ -72,16 +63,21 @@
 
                 <div class="mdl-card mdl-card--expand mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
                     <div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col ">
-                            <div class="query-from">
-                                <span class="mdl-color-text--blue-grey-900">Résultats:</span> 
-                                <span class="mdl-color-text--blue-grey-900 title-bold"><?php echo $_REQUEST["query"];?></span>
-                            </div>
+                        <div class="query-from">
+                            <span class="mdl-color-text--blue-grey-900">Résultats:</span> 
+                            <span class="mdl-color-text--blue-grey-900 title-bold"><?php echo $_REQUEST["query"];?></span>
+                        </div>
+                        <div id="result" style="display: none;">
                             <h4 class="title-bold mdl-color-text--orange-500">Par oeuvre</h4>
                             <div id="works">
                             </div>
-                        <h4 class="title-bold mdl-color-text--orange-500">Concepts philosophique</h4>
-                        <div class="mdl-card mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
-                            <div id="onto"></div>
+                            <h4 class="title-bold mdl-color-text--orange-500">Concepts philosophique</h4>
+                            <div class="mdl-card mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                                <div id="onto"></div>
+                            </div> 
+                        </div> 
+                        <div id="result-not-found" style="display: none;">
+                            <h5 class="center">Aucun résultat trouvé pour "<b><?php echo $_REQUEST["query"];?></b>".</h5>
                         </div> 
                      </div>
                 </div>
@@ -95,7 +91,13 @@
     </div>
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/solr.query.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/solr.query.js"></script>
+    <script>
+        var query_string = decodeURI('<?php echo $query_string; ?>'); 
+        bnisolr(query_string);
+    </script>
+
+
 </body>
 </html>

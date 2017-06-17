@@ -4,10 +4,6 @@ RewriteRule search/(.+)/$ /query/index.php?query=$1 [L]
 RewriteRule search/(.+)$ /query/index.php?query=$1 [L]
 RewriteRule search/?$ / [R]
 
-RewriteRule search2/(.+)/$ /query/index1.php?query=$1 [L]
-RewriteRule search2/(.+)$ /query/index1.php?query=$1 [L]
-
-
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
      Header unset ETag
