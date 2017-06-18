@@ -68,7 +68,7 @@ def main():
                     concept_add_parent(concepts, normalize_concept(attribute_name(properties)), concept_id)
     concepts_normalize(concepts)
     print(json.dumps(concepts))
-    #logging.warning(str((len(concepts), [c for c,v in concepts.items() if len(v["parent"]) > 1])))
+    #logging.warning(str((len(concepts))))
 
 
 if "__main__" == __name__:
