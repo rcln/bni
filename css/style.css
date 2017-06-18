@@ -24,6 +24,10 @@ a {
     font-size: 90%;
 }
 
+a.page {
+    color: #2a7c92;
+}
+
 .content .welcome {
     font-size: 5vh;
 }

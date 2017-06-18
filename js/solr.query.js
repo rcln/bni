@@ -18,6 +18,11 @@ function bnisolr(query_string){
     console.log(word_list_qs, addtional_query);
     var query_string_encoded = encodeURIComponent('"' + query_string + '"');
 
+    var work_alias = {
+                "Théorie des sentiments moraux": {"pdf": "tds.pdf", "id": "tds", "page-offset": 21, "pdf-page-offset": 27 }
+            };
+
+
     console.log(query_string, query_string_encoded);
     $.getJSON("/bnisolr/bni_adam_smith/select?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:(" + query_string_encoded + ")", function(response){
         console.log(response);
@@ -84,11 +89,14 @@ function bnisolr(query_string){
             section_pages = {};
             for(title in all){
                 //render_works += '<h5 class="mdl-color-text--white">' + title + '</h5>';
+                var work_id = work_alias[title]["id"];
+                console.log("work_id", work_id);
                 render_works += '<h5 class="">' + title + '</h5>';
                 render_works += '<ul>';
                     for(section in all[title]){
                         there_is_a_section = true;
-                        render_works += '   <li class="bni-list">' + section.replace(/\d\n?$/, "") + ' p. <span id="section' + (++_section_id) + '"></span>';
+                        render_works += '   <li class="bni-list">' + section.replace(/\d\n?$/, "") 
+                            + ' p. <span id="' + work_id + '--section' + (++_section_id) + '"></span>';
                         for(chapter in all[title][section]){
                             there_is_a_chapter = true;
                             render_works += '   <ul class="chapter">';
@@ -97,10 +105,15 @@ function bnisolr(query_string){
 
 
                             for(page in all[title][section][chapter]){
-                                if(typeof section_pages['section' + _section_id] == 'undefined'){
-                                    section_pages['section' + _section_id] = [];
+                                
+                                if(typeof section_pages[work_id] == 'undefined'){
+                                    section_pages[work_id] = {};
                                 }
-                                section_pages['section' + _section_id].push(page);
+
+                                if(typeof section_pages[work_id][work_id + '--section' + _section_id] == 'undefined'){
+                                    section_pages[work_id][work_id + '--section' + _section_id] = [];
+                                }
+                                section_pages[work_id][work_id + '--section' + _section_id].push(page);
                                 for(paragraph in all[title][section][chapter][page]){
                                     p_str = all[title][section][chapter][page][paragraph];
                                     re = new RegExp("(" + query_string + ")", "i");
@@ -134,13 +147,21 @@ function bnisolr(query_string){
 
             $("#works").html(render_works);
             pages_render = '';
-            for(sp in section_pages){
-                pages = section_pages[sp].sort(function(a,b){return a - b;});
-                for(p in pages){
-                    pages_render += ', ' + pages[p];
+            for(title in work_alias){
+                var work_id = work_alias[title]["id"];
+                var page_offset = work_alias[title]["page-offset"];
+                var pdf_page_offset = work_alias[title]["pdf-page-offset"];
+                for(sp in section_pages[work_id]){
+                    pages = section_pages[work_id][sp].sort(function(a,b){return a - b;});
+                    for(p in pages){
+                        var page_int = parseInt(pages[p]);
+                        pages_render += ', <a class="page" target="_black" href="/bni/documents/tds.pdf#page=' + (page_int + pdf_page_offset) + '">' 
+                                                + (page_int + page_offset)  + '</a>';
+                    }
+                    console.log("Pages: ", pages);
+                    $("#" + sp).html(pages_render.substring(1));
+                    pages_render = '';
                 }
-                $("#" + sp).html(pages_render.substring(1));
-                pages_render = '';
             }
 
             $("ul.chapter").on('click', 'li', function(){
