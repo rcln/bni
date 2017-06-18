@@ -20,10 +20,8 @@
      ul.subcontent li {
          text-align: justify;
          }
-
     </style>
-
-    <!--script type="text/javascript" src="js/onto.js"></script--> 
+    <?php $query_string= addslashes($_REQUEST["query"]); ?>
 </head>
 <body class="">
     <div class="container mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">

@@ -11,18 +11,18 @@ $.ajax({
 console.log(stopwords_fr);
 
 function bnisolr(query_string){
-    var query_string_encoded = encodeURIComponent('"' + query_string + '"');
     var word_list_qs = query_string.toLowerCase().split(/[\s']/).filter(function(w){ 
                                             return !stopwords_fr.hasOwnProperty(w);
                         });   
-
-    console.log(word_list_qs);
+    var addtional_query = word_list_qs.length > 0? " OR (" + word_list_qs.join(" AND ") + ")" : "";
+    console.log(word_list_qs, addtional_query);
+    var query_string_encoded = encodeURIComponent('"' + query_string + '"');
 
     console.log(query_string, query_string_encoded);
-    $.getJSON("/bnisolr/bni_adam_smith/select?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:" + query_string_encoded, function(response){
+    $.getJSON("/bnisolr/bni_adam_smith/select?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:(" + query_string_encoded + ")", function(response){
         console.log(response);
         var works = {};
-        console.log(response.response.numFound > 0, "Not found.");
+        console.log(response.response.numFound > 0);
         if(typeof response.response != 'undefined' && response.response.numFound > 0 ){
             $("#result-not-found").hide(); 
             $("#result").show(); 
