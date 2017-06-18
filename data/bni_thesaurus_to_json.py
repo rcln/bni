@@ -11,6 +11,7 @@ def concept_setdefault(concepts, concept):
     concepts.setdefault(concept, {"id": concept, 
                                     "name": concept, 
                                     "parent": set([]), 
+                                    "children": set([]), 
                                     "variants": set([]), 
                                     "n_parents": 0})
 
@@ -31,12 +32,17 @@ def concept_add_parent(concepts, _parent, _child):
     concepts[_child]["parent"].add(_parent)
     concepts[_child]["n_parents"] += 1
 
+def concept_add_child(concepts, _parent, _child):
+    concept_setdefault(concepts, _parent)
+    concepts[_parent]["children"].add(_child)
+
 def concepts_normalize(concepts):
     for k in concepts.keys():
         concepts[k]["parent"] = list(concepts[k]["parent"])
         if not concepts[k]["parent"]:
             concepts[k]["parent"] = None
         concepts[k]["variants"] = list(concepts[k]["variants"])
+        concepts[k]["children"] = list(concepts[k]["children"])
 
 def tag_type(tag):
     return tag.split("}")[1]
@@ -64,8 +70,10 @@ def main():
                 #print(" * ", current_type, concept_id, attribute_name(properties))
                 if current_type == "narrower":
                     concept_add_parent(concepts, concept_id, normalize_concept(attribute_name(properties)))
+                    concept_add_child(concepts, concept_id, normalize_concept(attribute_name(properties)))
                 if current_type == "broader":
                     concept_add_parent(concepts, normalize_concept(attribute_name(properties)), concept_id)
+                    concept_add_child(concepts, normalize_concept(attribute_name(properties)), concept_id)
     concepts_normalize(concepts)
     print(json.dumps(concepts))
     #logging.warning(str((len(concepts))))
