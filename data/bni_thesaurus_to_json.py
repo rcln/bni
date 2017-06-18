@@ -3,6 +3,10 @@ import logging
 import json
 
 concepts = {}
+
+def normalize_concept(concept):
+    return concept.lower().replace("_", " ").strip()
+
 def concept_setdefault(concepts, concept):
     concepts.setdefault(concept, {"id": concept, 
                                     "name": concept, 
@@ -46,7 +50,7 @@ def main():
     for concept in root:
         if tag_type(concept.tag) != "Concept":
             continue 
-        concept_id = attribute_name(concept)
+        concept_id = normalize_concept(attribute_name(concept))
         concept_setdefault(concepts, concept_id)
         #print(concept_id)
         for properties in concept:
@@ -59,9 +63,9 @@ def main():
             elif current_type in ["narrower", "broader"]:
                 #print(" * ", current_type, concept_id, attribute_name(properties))
                 if current_type == "narrower":
-                    concept_add_parent(concepts, concept_id, attribute_name(properties))
+                    concept_add_parent(concepts, concept_id, normalize_concept(attribute_name(properties)))
                 if current_type == "broader":
-                    concept_add_parent(concepts, attribute_name(properties), concept_id)
+                    concept_add_parent(concepts, normalize_concept(attribute_name(properties)), concept_id)
     concepts_normalize(concepts)
     print(json.dumps(concepts))
     #logging.warning(str((len(concepts), [c for c,v in concepts.items() if len(v["parent"]) > 1])))
