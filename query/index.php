@@ -44,9 +44,11 @@
         <style>
             .node circle {
                 fill: #2a7c92;
+                cursor: pointer;
             }
             .node text {
                 font: 12pt sans-serif;
+                cursor: pointer;
             }
             .node--internal circle {
                 fill: #555;
@@ -103,11 +105,11 @@
                             <span class="mdl-color-text--blue-grey-900 title-bold"><?php echo $_REQUEST["query"];?></span>
                         </div>
                         <div id="result" style="display: none;">
-                            <h4 class="title-bold mdl-color-text--orange-500">Par oeuvre</h4>
+                            <h4 class="title-bold mdl-color-text--deep-orange-900">Par oeuvre</h4>
                             <div id="works">
                             </div>
                             <div id="concepts">
-                            <h4 class="title-bold mdl-color-text--orange-500">Concepts philosophique</h4>
+                            <h4 class="title-bold mdl-color-text--deep-orange-900">Concepts philosophique</h4>
                             <div class="mdl-card mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
                                 <svg id="ontograph"></svg>
                             </div> 
