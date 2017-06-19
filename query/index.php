@@ -109,7 +109,7 @@
                             <div id="works">
                             </div>
                             <div id="concepts">
-                            <h4 class="title-bold mdl-color-text--deep-orange-900">Concepts philosophique</h4>
+                            <h4 class="title-bold mdl-color-text--deep-orange-900">Concepts philosophiques</h4>
                             <div class="mdl-card mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
                                 <svg id="ontograph"></svg>
                             </div> 

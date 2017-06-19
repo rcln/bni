@@ -38,7 +38,7 @@ function ontograph(subgraph){
                 return (d.parent && typeof d.parent == "object")? d.parent[0] : d.parent; 
             });
     
-    d3.json("data/tds-rdf.json", function(error, thesaurus) {
+    d3.json("data/bni-thesaurus.json", function(error, thesaurus) {
         if (error) throw error;
         console.assert(thesaurus != {}, "Empty data.")
    

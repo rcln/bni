@@ -6,7 +6,7 @@
  {"id": 112, "label": "Le principe d'atténuation", "parent": 11},
  {"id": 1121, "label": "Les deux vertus", "parent": 112},
  {"id": 11211, "label": "Amabilité", "parent": 1121},
- {"id": 11212, "label": "Empire sur soie", "parent": 1121},
+ {"id": 11212, "label": "Empire sur soi", "parent": 1121},
  {"id": 1122, "label": "L'auto-régulation des passions", "parent": 112},
  {"id": 12, "label": "Les règles morales", "parent": 1},
  {"id": 121, "label": "La convenance", "parent": 12},
