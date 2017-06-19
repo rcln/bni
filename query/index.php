@@ -76,10 +76,10 @@
                 <div class="mdl-cell--6-col">
                     <div class="header-img-avatar--secondary">
                         <div class="img-container">
-                            <img class="img-avatar" src="adam-smith.jpg" style="margin-left: -2vh;">
+                            <img class="img-avatar--secondary" src="adam-smith.jpg" style="margin-left: -3vh;">
                         </div>
+                        <h6 class="main-title--secondary">Immersion dans l'oeuvre <br>d'Adam SMITH</h6>
                     </div>
-                    <h6>Immersion dans l'oeuvre d'Adam SMITH</h6>
                 </div>
                 <div class="mdl-cell--6-col">
                     <form action="/bni/search/" class="search search--secondary" autocomplete="off">
