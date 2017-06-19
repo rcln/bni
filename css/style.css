@@ -6,7 +6,6 @@ div.container {
     background-color: #fff !important;
 }
 header.header {
-    box-shadow: none !important;
 }
 header.header > div {
     margin-top: 10px;    
@@ -15,7 +14,7 @@ footer.mdl-mini-footer {
     padding: 16px !important;
 }
 main.content {
-    width: 97%;
+    width: 95%;
     margin: auto;
     background-color: white; 
 }
@@ -42,9 +41,14 @@ a.page {
     align-items: center;
     justify-content: center;
 }
+
 .center {
     text-align: center;
 }
+.center-items {
+    justify-content: center;
+}
+
 
 
 /** Search **/
