@@ -105,12 +105,20 @@ main .header-img-avatar {
     margin: 5vh 0vh;
 }
 
+main .header-img-avatar--secondary {
+}
+
+
 .header-img-avatar .img-container {
     border-radius: 50%;
     width: 15vh;
     height: 15vh;
     overflow: hidden;
     background-color: #ccc;
+}
+
+.header-img-avatar--secondary .img-container {
+
 }
 
 .img-avatar {
@@ -181,11 +189,11 @@ main .header-img-avatar {
     height: 60vh;
 }
 
-#onto {
+#ontograph {
     width: 90%;
     /*background-color: white;*/
     min-height: 60vh;
-    height: 700px;
+    height: 100vh;
 }
 
 /** Sticky Footer **/

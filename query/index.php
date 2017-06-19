@@ -41,9 +41,46 @@
                         </div>
                     </div-->
 
+        <style>
+            .node circle {
+                fill: #2a7c92;
+            }
+            .node text {
+                font: 12pt sans-serif;
+            }
+            .node--internal circle {
+                fill: #555;
+            }
+            .node--main circle {
+                fill: #c62828;
+            }
+            .node--internal text {
+              text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+            }
+            .node circle#circle-root {
+            }
+            .link {
+              fill: none;
+              stroke: #555;
+              stroke-opacity: 0.4;
+              stroke-width: 1.5px;
+            }
+            #back-to-graph {
+                margin-top: -100px;
+                margin-left: 10px;        
+            }
+        </style>
+
         <main class="content mdl-layout__content">
             <section class="mdl-grid">
-                <div class="mdl-cell--6-col"><h5>Immersion dans l'oeuvre d'Adam SMITH</h5></div>
+                <div class="mdl-cell--6-col">
+                    <div class="header-img-avatar--secondary">
+                        <div class="img-container">
+                            <img class="img-avatar" src="adam-smith.jpg" style="margin-left: -2vh;">
+                        </div>
+                    </div>
+                    <h6>Immersion dans l'oeuvre d'Adam SMITH</h6>
+                </div>
                 <div class="mdl-cell--6-col">
                     <form action="/bni/search/" class="search search--secondary" autocomplete="off">
                         <div class="mdl-textfield mdl-js-textfield">
@@ -69,9 +106,11 @@
                             <h4 class="title-bold mdl-color-text--orange-500">Par oeuvre</h4>
                             <div id="works">
                             </div>
+                            <div id="concepts">
                             <h4 class="title-bold mdl-color-text--orange-500">Concepts philosophique</h4>
                             <div class="mdl-card mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
-                                <div id="onto"></div>
+                                <svg id="ontograph"></svg>
+                            </div> 
                             </div> 
                         </div> 
                         <div id="result-not-found" style="display: none;">
@@ -90,6 +129,8 @@
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/main.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/d3.v4.min.js"></script>
+    <script src="js/onto.d3.js"></script>
     <script src="js/solr.query.js"></script>
     <script>
         var query_string = decodeURI('<?php echo $query_string; ?>'); 

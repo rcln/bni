@@ -8,16 +8,18 @@ $.ajax({
     }
 });
 
-console.log(stopwords_fr);
+//console.log(stopwords_fr);
 
 function bnisolr(query_string){
     var word_list_qs = query_string.toLowerCase().split(/[\s']/).filter(function(w){ 
                                             return !stopwords_fr.hasOwnProperty(w);
                         });   
     var addtional_query = word_list_qs.length > 0? " OR (" + word_list_qs.join(" AND ") + ")" : "";
-    console.log(word_list_qs, addtional_query);
+    //console.log(word_list_qs, addtional_query);
     var query_string_encoded = encodeURIComponent('"' + query_string + '"');
-
+    var term_list = word_list_qs;
+    term_list.push(query_string.toLowerCase())
+    console.log("term list", term_list);
     var work_alias = {
                 "Théorie des sentiments moraux": {"pdf": "tds.pdf", "id": "tds", "page-offset": 21, "pdf-page-offset": 27 }
             };
@@ -117,7 +119,7 @@ function bnisolr(query_string){
                                 for(paragraph in all[title][section][chapter][page]){
                                     p_str = all[title][section][chapter][page][paragraph];
                                     re = new RegExp("(" + query_string + ")", "i");
-                                    console.log("p_str", re.test(p_str), query_string);
+                                    //console.log("p_str", re.test(p_str), query_string);
                                     //console.assert(re.test(p_str), p_str);
                                     if(re.test(p_str)){
                                         render_works += '       <li>' + p_str.replace(re, "<b>$1</b>") + '</li>';
@@ -158,7 +160,7 @@ function bnisolr(query_string){
                         pages_render += ', <a class="page" target="_black" href="/bni/documents/tds.pdf#page=' + (page_int + pdf_page_offset) + '">' 
                                                 + (page_int + page_offset)  + '</a>';
                     }
-                    console.log("Pages: ", pages);
+                    //console.log("Pages: ", pages);
                     $("#" + sp).html(pages_render.substring(1));
                     pages_render = '';
                 }
@@ -186,6 +188,8 @@ function bnisolr(query_string){
                        $(this).parent()[0].shown = false;
                     });
             });
+
+            ontograph(term_list);
 
         }else{
             $("#result").hide(); 
