@@ -8,10 +8,10 @@ $(function(){
         console.log("search");
         var query_string = $.trim($("#query").val()).replace(/\s+/, " ").replace(/ /g,"+");
         if(query_string == ""){
-            query_string = "sympathie";
+            $("#query").focus();
+            $("#query").attr("placeholder", "Ne le laissez pas vide!");
+        }else{
+            window.open("/bni/search/" + query_string, "_self", false);
         }
-        //query_string = "sympathie";
-        //console.log($("form.search").attr("action"));
-        window.open("/bni/search/" + query_string, "_self", false);
     });
 });
