@@ -11,12 +11,13 @@ $.ajax({
 //console.log(stopwords_fr);
 
 function bnisolr(query_string){
+    query_string = query_string.trim();
     var word_list_qs = query_string.toLowerCase().split(/[\s']/).filter(function(w){ 
                                             return !stopwords_fr.hasOwnProperty(w);
                         });   
     var addtional_query = word_list_qs.length > 0? " OR (" + word_list_qs.join(" AND ") + ")" : "";
     //console.log(word_list_qs, addtional_query);
-    var query_string_encoded = encodeURIComponent('"' + query_string + '"');
+    var query_string_encoded = encodeURIComponent('"' + query_string + '"' + addtional_query );
     var term_list = word_list_qs;
     term_list.push(query_string.toLowerCase())
     console.log("term list", term_list);
@@ -25,7 +26,7 @@ function bnisolr(query_string){
             };
 
 
-    console.log(query_string, query_string_encoded);
+    console.log("Query string: ", query_string, query_string_encoded);
     $.getJSON("/bnisolr/bni_adam_smith/select?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:(" + query_string_encoded + ")", function(response){
         console.log(response);
         var works = {};
@@ -118,19 +119,24 @@ function bnisolr(query_string){
                                 section_pages[work_id][work_id + '--section' + _section_id].push(page);
                                 for(paragraph in all[title][section][chapter][page]){
                                     p_str = all[title][section][chapter][page][paragraph];
-                                    re = new RegExp("(" + query_string + ")", "i");
+                                    re = new RegExp("(" + query_string + ")", "ig");
                                     //console.log("p_str", re.test(p_str), query_string);
                                     //console.assert(re.test(p_str), p_str);
+                                    var term_found = false;
                                     if(re.test(p_str)){
-                                        render_works += '       <li>' + p_str.replace(re, "<b>$1</b>") + '</li>';
+                                        term_found = true;
+                                        highlighted_string = p_str.replace(re, "<b>$1</b>");
                                     }else{
+                                        highlighted_string = p_str;
                                         for(var i in word_list_qs){
-                                            re = new RegExp("(" + word_list_qs[i] + ")", "i");
+                                            re = new RegExp("(" + word_list_qs[i] + ")", "ig");
                                             if(re.test(p_str)){
-                                                render_works += '       <li>' + p_str.replace(re, "<b>$1</b>") + '</li>';
+                                                term_found = true;
+                                                highlighted_string = highlighted_string.replace(re, "<b>$1</b>");
                                             }
                                         }
                                     }
+                                    render_works += (term_found)? '       <li>' + highlighted_string + '</li>' : '';
                                 }
                             }
                             render_works += '           </ul>';
