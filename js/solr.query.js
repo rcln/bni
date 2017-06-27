@@ -157,8 +157,9 @@ function bnisolr(query_string){
                     pages = section_pages[work_id][sp].sort(function(a,b){return a - b;});
                     for(p in pages){
                         var page_int = parseInt(pages[p]);
-                        pages_render += ', <a class="page" target="_black" href="/bni/documents/tds.pdf#page=' + (page_int + pdf_page_offset) + '">' 
-                                                + (page_int + page_offset)  + '</a>';
+                        //pages_render += ', <a class="page" target="_black" href="/bni/documents/tds.pdf#page=' + (page_int + pdf_page_offset) + '">' 
+                        //                        + (page_int + page_offset)  + '</a>';
+                        pages_render +=  ", " + (page_int + page_offset) ;
                     }
                     //console.log("Pages: ", pages);
                     $("#" + sp).html(pages_render.substring(1));
