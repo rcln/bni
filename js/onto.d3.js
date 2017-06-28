@@ -1,4 +1,4 @@
-function ontograph(subgraph){ 
+function ontograph(start_node){ 
     var svg = d3.select("#ontograph"),
     svg_currentbound = svg.node().getBoundingClientRect(),
     width =+ svg_currentbound.width,
@@ -30,7 +30,8 @@ function ontograph(subgraph){
    
     var tree_rigth = d3.tree()
         .size([height - graph_offset, midwidth*1.2 ])
- 
+
+    /*
     var stratify = d3.stratify()
         .id(function(d) { return d.id; })
         .parentId(function(d) { 
@@ -38,6 +39,13 @@ function ontograph(subgraph){
                 return (d.parent && typeof d.parent == "object")? d.parent[0] : d.parent; 
             });
     
+    */
+    /*var stratify = function(data){
+            for(var d in data){
+                data[d].
+            }
+        };*/
+
     d3.json("data/bni-thesaurus.json", function(error, thesaurus) {
         if (error) throw error;
         console.assert(thesaurus != {}, "Empty data.")
@@ -52,7 +60,6 @@ function ontograph(subgraph){
         }
 
         console.log("Term list", term_list);
-
     
         var add_children = function(graph, graph_nodes, children){
             for(var ch in children){
@@ -64,45 +71,53 @@ function ontograph(subgraph){
             }
         }
 
-        var make_graph = function(graph, graph_nodes, parents){
-            for(var p in parents){
-                console.log("graph_nodes", graph_nodes)
-                console.log("parent ->>> ", parents[p], graph_nodes.hasOwnProperty(parents[p]));
-                if(!graph_nodes.hasOwnProperty(parents[p])){
-                    console.log("thesaurus ->>> ", thesaurus[parents[p]]);
-                    graph_nodes[thesaurus[parents[p]]["id"]] = true;
-                    graph.push(thesaurus[parents[p]]);
-                    make_graph(graph, graph_nodes, thesaurus[parents[p]]["parent"]);
-                    add_children(graph, graph_nodes, thesaurus[parents[p]]["children"]);
+        var make_graph = function(pnode, curnode = null){
+            if(typeof pnode != "undefined"){
+                if(typeof pnode.children != "undefined" && pnode.children.length > 0){
+                    var children = pnode.children.slice();
+                    pnode.children = [];
+                    for(var ch in children){
+                        child = thesaurus[children[ch]];
+                        var newchild = {
+                                    "data": child,
+                                    "name": child["id"],
+                                    "label": child["label"]
+                                };
+                        if(curnode && curnode["name"] == newchild["name"]){
+                            newchild = curnode;
+                        }
+                        pnode.children.push(newchild);
+                    }
+                }else{
+                    pnode.children = null;
                 }
+                console.log(pnode);
+                return (pnode["parent"] && pnode["parent"].length > 0)? make_graph(thesaurus[pnode["parent"][0]], pnode) : pnode;
+            }else{
+                return curnode;
             }
         }
 
-        var data = [];
+        var graph = {};
 
-        for(var sge in subgraph){
-            if(typeof term_list[subgraph[sge]] != "undefined"){
-                data = term_list[subgraph[sge]];
+        for(var sge in start_node){
+            if(typeof term_list[start_node[sge]] != "undefined"){
+                graph = term_list[start_node[sge]];
                 break;    
             }
         }
 
-        console.log("data", data, subgraph);
-
-        if(data.length < 1){
+        if(graph.length < 1){
            $("#concepts").hide(); 
         }
 
-        data["main"] = true;
-        var graph = [data];
-        var graph_nodes = {};
-        graph_nodes[data["id"]] = true;
-        make_graph(graph, graph_nodes, data["parent"]);
-        add_children(graph, graph_nodes, data["children"]);
-        console.log("graph", graph, graph_nodes, subgraph);
+        graph["main"] = true;
+        graph = make_graph(graph);
+        //add_children(graph, graph_nodes, data["children"]);
+        console.log("graph", graph);
 
-        var rigth_nodes = graph; 
-        var rigth_graph = tree_rigth(stratify(rigth_nodes));
+        var hierarchy_nodes = d3.hierarchy(graph);
+        var rigth_graph = tree_rigth(hierarchy_nodes);
     
         var root_offset = -200;
         var svg_margin = 0;
