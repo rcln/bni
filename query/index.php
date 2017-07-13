@@ -47,7 +47,7 @@
                 cursor: pointer;
             }
             .node text {
-                font: 12pt sans-serif;
+                font: 10pt sans-serif;
                 cursor: pointer;
             }
             .node--internal circle {
