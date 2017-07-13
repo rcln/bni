@@ -46,7 +46,7 @@ function ontograph(start_node){
             }
         };*/
 
-    d3.json("data/bni-thesaurus.json", function(error, thesaurus) {
+    d3.json("data/bni-thesaurus-v2.json", function(error, thesaurus) {
         if (error) throw error;
         console.assert(thesaurus != {}, "Empty data.")
    
@@ -168,6 +168,11 @@ function ontograph(start_node){
             window.open("/bni/search/" + decodeURIComponent(d.data.label.replace(/ /g, "+")), "_self", false);
         });
      
+
+        var text_labels = g.selectAll("text").on("mouseenter", function(d) {
+            console.log(d);
+            //d.style("background-color", "white");
+        });
         $("#back-to-graph").show();
     });
 
