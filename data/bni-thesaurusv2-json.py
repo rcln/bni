@@ -32,7 +32,10 @@ def concept_set_label(concepts, concept_id, labels, preflabels):
 
 def concept_add_parent(concepts, _parent, _child):
     concept_setdefault(concepts, _child)
-    concepts[_child]["parent"].add(_parent)
+    if _parent:
+        concepts[_child]["parent"].add(_parent)
+    else:
+        concepts[_child]["parent"] = []
 
 def concept_add_child(concepts, _parent, _child):
     concept_setdefault(concepts, _parent)
