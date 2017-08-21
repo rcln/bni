@@ -100,11 +100,21 @@ function ontograph(start_node){
 
         var graph = {};
 
+        var was_term_found = false;
+        var max_length_term = 0; 
         for(var sge in start_node){
             if(typeof term_list[start_node[sge]] != "undefined"){
-                graph = term_list[start_node[sge]];
-                break;    
+                if(max_length_term < start_node[sge].length){
+                    graph = term_list[start_node[sge]];
+                    was_term_found = true;
+                    max_length_term = start_node[sge].length;
+                }
             }
+        }
+        //console.log("max len", max_length_term, start_node);
+
+        if(!was_term_found){
+            $("#concepts").hide();       
         }
 
         if(graph.length < 1){

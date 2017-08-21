@@ -104,19 +104,21 @@
                             <span class="mdl-color-text--blue-grey-900">Résultats:</span> 
                             <span class="mdl-color-text--blue-grey-900 title-bold"><?php echo $_REQUEST["query"];?></span>
                         </div>
-                        <div id="result" style="display: none;">
-                            <h4 class="title-bold mdl-color-text--deep-orange-900">Par oeuvre</h4>
-                            <div id="works">
-                            </div>
-                            <div id="concepts">
-                            <h4 class="title-bold mdl-color-text--deep-orange-900">Concepts philosophiques</h4>
-                            <div class="mdl-card mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
-                                <svg id="ontograph"></svg>
-                            </div> 
-                            </div> 
-                        </div> 
                         <div id="result-not-found" style="display: none;">
                             <h5 class="center">Aucun résultat trouvé pour "<b><?php echo $_REQUEST["query"];?></b>".</h5>
+                        </div> 
+                        <div id="result">
+                            <div id="result-items" style="display: none;" >
+                                <h4 class="title-bold mdl-color-text--deep-orange-900">Par oeuvre</h4>
+                                <div id="works">
+                                </div>
+                            </div>
+                            <div id="concepts">
+                                <h4 class="title-bold mdl-color-text--deep-orange-900">Concepts philosophiques</h4>
+                                <div class="mdl-card mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                                    <svg id="ontograph"></svg>
+                                </div> 
+                            </div> 
                         </div> 
                      </div>
                 </div>

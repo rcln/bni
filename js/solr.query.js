@@ -11,13 +11,13 @@ $.ajax({
 //console.log(stopwords_fr);
 
 function bnisolr(query_string){
-    query_string = query_string.trim();
+    query_string = query_string.trim().replace(/[:,.]/gi, "");
     var word_list_qs = query_string.toLowerCase().split(/[\s']/).filter(function(w){ 
                                             return !stopwords_fr.hasOwnProperty(w);
                         });   
     var addtional_query = word_list_qs.length > 0? " OR (" + word_list_qs.join(" AND ") + ")" : "";
     //console.log(word_list_qs, addtional_query);
-    var query_string_encoded = encodeURIComponent('"' + query_string + '"' + addtional_query );
+    var query_string_encoded = encodeURIComponent(('"' + query_string + '"' + addtional_query));
     var term_list = word_list_qs;
     term_list.push(query_string.toLowerCase())
     console.log("term list", term_list);
@@ -33,7 +33,7 @@ function bnisolr(query_string){
         console.log(response.response.numFound > 0);
         if(typeof response.response != 'undefined' && response.response.numFound > 0 ){
             $("#result-not-found").hide(); 
-            $("#result").show(); 
+            $("#result-items").show(); 
             var docs = response.response.docs;
             for(d in docs){
                 if(typeof works[docs[d].title] == 'undefined'){
@@ -196,12 +196,13 @@ function bnisolr(query_string){
                     });
             });
 
-            ontograph(term_list);
 
         }else{
-            $("#result").hide(); 
+            $("#result-items").hide(); 
             $("#result-not-found").show(); 
         }
+
+        ontograph(term_list);
     });
 } 
 
