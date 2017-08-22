@@ -6,8 +6,10 @@ RewriteRule search/?$ / [R]
 
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
-     Header unset ETag
-     Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
-     Header set Pragma "no-cache"
-     Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+    #Header set Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
+    #Header set Access-Control-Allow-Headers "*"
+    #Header unset ETag
+    #Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    #Header set Pragma "no-cache"
+    #Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
 </IfModule>
