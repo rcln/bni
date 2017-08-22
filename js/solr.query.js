@@ -1,14 +1,12 @@
 var stopwords_fr = {};
 $.ajax({
-    url: "/bni/js/stopwords-fr-object.json",
+    url: url_stopwords_fr,
     async: false,
     dataType: 'json',
     success: function (response) {
         stopwords_fr = response;
     }
 });
-
-//console.log(stopwords_fr);
 
 function bnisolr(query_string){
     query_string = query_string.trim().replace(/[:,.]/gi, "");
@@ -22,12 +20,11 @@ function bnisolr(query_string){
     term_list.push(query_string.toLowerCase())
     console.log("term list", term_list);
     var work_alias = {
-                "Théorie des sentiments moraux": {"pdf": "tds.pdf", "id": "tds", "page-offset": 21, "pdf-page-offset": 27 }
+                "Théorie des sentiments moraux": 
+                {"pdf": "tds.pdf", "id": "tds", "page-offset": 21, "pdf-page-offset": 27 }
             };
-
-
     console.log("Query string: ", query_string, query_string_encoded);
-    $.getJSON("/bnisolr/bni_adam_smith/select?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:(" + query_string_encoded + ")", function(response){
+    $.getJSON(url_to_source + "?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:(" + query_string_encoded + ")", function(response){
         console.log(response);
         var works = {};
         console.log(response.response.numFound > 0);

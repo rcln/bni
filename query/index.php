@@ -21,6 +21,7 @@
          text-align: justify;
          }
     </style>
+    <script src="js/bni-config.js"></script>
     <?php $query_string= addslashes($_REQUEST["query"]); ?>
 </head>
 <body class="">
