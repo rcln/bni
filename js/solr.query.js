@@ -1,6 +1,6 @@
 var stopwords_fr = {};
 $.ajax({
-    url: url_stopwords_fr,
+    url: bnicfg.url_stopwords_fr,
     async: false,
     dataType: 'json',
     success: function (response) {
@@ -24,7 +24,7 @@ function bnisolr(query_string){
                 {"pdf": "tds.pdf", "id": "tds", "page-offset": 21, "pdf-page-offset": 27 }
             };
     console.log("Query string: ", query_string, query_string_encoded);
-    $.getJSON(url_to_source + "?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:(" + query_string_encoded + ")", function(response){
+    $.getJSON(bnicfg.url_to_source + "?hl=on&indent=on&wt=json&q=type:primary_literature%20AND%20page:(" + query_string_encoded + ")", function(response){
         console.log(response);
         var works = {};
         console.log(response.response.numFound > 0);
