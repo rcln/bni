@@ -15,5 +15,5 @@ services:
     entrypoint:
       - docker-entrypoint.sh
       - solr-precreate
-      - bibliotheque
+      - mycore
 
