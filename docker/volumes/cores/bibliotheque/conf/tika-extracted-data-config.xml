@@ -1,0 +1,38 @@
+<dataConfig>
+ <script><![CDATA[
+     id = 1;
+     function GenerateId(row) {
+         row.id = (id++).toFixed();
+         return row;
+     }       
+       ]]></script>
+
+    <dataSource type="FileDataSource" />
+    <document>
+        <entity name="files" 
+                processor="FileListEntityProcessor"
+                baseDir="./oeuvre/xml/" 
+                fileName=".*\.(xml)"
+                onError="skip"
+                recursive="true"  
+                rootEntity="false">
+                <!-- field column="fileAbsolutePath" name="id" / -->
+                <field column="fileLastModified" name="lastModified" />
+                <entity name="documentImport"
+                        processor="XPathEntityProcessor"
+                        url="${files.fileAbsolutePath}" 
+                        forEach="/html/body/div | /html/head"
+                        rootEntity="true" transformer="script:GenerateId">
+                    <field column="file" name="fileName" commonField="true" />
+                    <field column="Author" name="author" xpath="/html/head/meta[@name='Author']/@content" commonField="true" />
+                    <field column="type" name="type" xpath="/html/head/meta[@name='type']/@content" commonField="true" />
+                    <field column="title" name="title" xpath="/html/head/title" commonField="true" />
+                    <field column="text"/>
+                    <field column="section" name="section" xpath="/html/body/div/p[@class='section']" commonField="true"/>
+                    <field column="chapter" name="chapter" xpath="/html/body/div/p[@class='chapter']" commonField="true"/>
+                    <field column="category" name="category" xpath="/html/body/div/p/@category"/>
+                    <field column="page" name="page" xpath="/html/body/div/p"/>
+                </entity>
+        </entity>
+    </document>
+</dataConfig>

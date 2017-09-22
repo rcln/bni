@@ -51,7 +51,7 @@
 
   <requestHandler name="/dataimport" class="solr.DataImportHandler">
     <lst name="defaults">
-      <str name="config">tika-data-config.xml</str>
+      <str name="config">tika-extracted-data-config.xml</str>
     </lst>
   </requestHandler>
 
