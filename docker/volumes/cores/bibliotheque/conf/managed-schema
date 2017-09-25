@@ -16,14 +16,17 @@
  limitations under the License.
 -->
 
-<schema name="example-DIH-tika" version="1.6">
+<schema name="bibliotheque-numerique-des-idees" version="1.6">
 
   <uniqueKey>id</uniqueKey>
 
   <field name="id" type="string" indexed="true" stored="true"/>
-  <field name="author" type="text_simple" indexed="true" stored="true"/>
-  <field name="title" type="text_simple" indexed="true" stored="true" multiValued="true"/>
-  <field name="format" type="string" indexed="true" stored="true"/>
+  <!-- field name="author" type="text_simple" indexed="true" stored="true"/ -->
+  <field name="title" type="text_simple" indexed="true" stored="true"/>
+  <field name="last_modified" type="date" indexed="true" stored="true" />
+  <field name="file_name" type="text_simple" indexed="true" stored="true" />
+
+  <field name="p" type="text_simple" indexed="true" stored="true"/>
 
   <!-- field "text" is searchable (it is the default search field) but it is not stored to save space -->
   <field name="text" type="text_simple" indexed="true" stored="false" multiValued="true"/>
@@ -50,5 +53,7 @@
       <filter class="solr.LowerCaseFilterFactory"/>
     </analyzer>
   </fieldType>
+
+  <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
 
 </schema>

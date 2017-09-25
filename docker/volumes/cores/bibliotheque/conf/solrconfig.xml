@@ -38,7 +38,6 @@
   -->
   <luceneMatchVersion>6.6.1</luceneMatchVersion>
 
-  <!-- Load Data Import Handler and Apache Tika (extraction) libraries -->
   <lib dir="${solr.install.dir:../../../..}/dist/" regex="solr-dataimporthandler-.*\.jar"/>
   <lib dir="${solr.install.dir:../../../..}/contrib/extraction/lib" regex=".*\.jar"/>
 
