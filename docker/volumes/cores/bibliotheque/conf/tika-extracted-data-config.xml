@@ -29,6 +29,7 @@
                         rootEntity="true" 
                         transformer="script:f_entity">
                         <field column="p" name="p" xpath="/html/body/div/p" />
+                        <field column="page" name="page" xpath="/html/body/div/p/@page" />
                         <!-- field column="text" / -->
                         <!-- field column="type" name="type" xpath="/html/head/meta[@name='type']/@content" commonField="true" /-->
                         <!--field column="section" name="section" xpath="/html/body/div/p[@class='section']" commonField="true"/>
