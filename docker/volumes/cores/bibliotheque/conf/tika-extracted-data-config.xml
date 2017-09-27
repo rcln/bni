@@ -12,7 +12,7 @@
     <document>
         <entity name="oeuvres" 
                 processor="FileListEntityProcessor"
-                baseDir="/opt/solr/server/solr/mycores/bibliotheque/conf/oeuvre/xml/" 
+                baseDir="/opt/solr/server/solr/mycores/bibliotheque/conf/litterature/xml/" 
                 fileName=".*\.xml$"
                 onError="skip"
                 recursive="true"  
