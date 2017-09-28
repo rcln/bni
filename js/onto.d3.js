@@ -1,3 +1,8 @@
+if(typeof url_thesaurus == "undefined"){
+    url_thesaurus = "data/thesaurus/bni-thesaurus-adam-smith.json"; 
+    default_author_search = "/bni/adam-smith/search/";
+}
+
 function ontograph(start_node){ 
     var svg = d3.select("#ontograph"),
     svg_currentbound = svg.node().getBoundingClientRect(),
@@ -46,7 +51,7 @@ function ontograph(start_node){
             }
         };*/
 
-    d3.json("data/bni-thesaurus-v2.json", function(error, thesaurus) {
+    d3.json(url_thesaurus, function(error, thesaurus) {
         if (error) throw error;
         console.assert(thesaurus != {}, "Empty data.")
    
@@ -175,7 +180,7 @@ function ontograph(start_node){
             });
 
         var whole_graph = g.selectAll(".node").on("click", function(d) {
-            window.open("/bni/search/" + decodeURIComponent(d.data.label.replace(/ /g, "+")), "_self", false);
+            window.open( default_author_search + decodeURIComponent(d.data.label.replace(/ /g, "+")), "_self", false);
         });
      
 

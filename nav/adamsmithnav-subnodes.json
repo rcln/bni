@@ -15,10 +15,10 @@
  {"id": 1231, "label": "Motif et conséquence", "parent": 123 },
  {"id": 1232, "label": "Absolu et relatif", "parent": 123 },
  {"id": 124, "label": "Le Spectateur Impartial", "parent": 12 },
- {"id": 1241, "label": "Genèse du SI", "parent": 124 },
+ {"id": 1241, "label": "Genèse du spectateur impartial", "parent": 124 },
  {"id": 1242, "label": "Les contradictions de la symapthie", "parent": 124 },
- {"id": 12421, "label": "Le défaut: règles morales", "parent": 1242 },
- {"id": 12422, "label": "L'excès: la vanité, l'amour des puissants", "parent": 1242 }
+ {"id": 12421, "label": "Le défaut de sympathie", "parent": 1242 },
+ {"id": 12422, "label": "L'excès de sympathie, la vanité, l'amour des puissants", "parent": 1242 }
  ],
  "economie": [
  {"id": 2, "label": "Economie", "name": "economie", "position": "root", "parent": null},
@@ -34,11 +34,11 @@
  {"id": 224, "label": "La frugalité", "parent": 22 },
  {"id": 23, "label": "La division du travail", "parent": 2},
  {"id": 231, "label": "La valeur des marchandises", "parent": 23 },
- {"id": 232, "label": "la division sociale et l'égalité", "parent": 23 }
+ {"id": 232, "label": "La division sociale et l'égalité", "parent": 23 }
  ],
  "philosophie_politique": [
  {"id": 3, "label": "Philosophie Politique", "name": "philosophie_politique", "position": "root", "parent": null},
- {"id": 31, "label": "sympathie et société", "parent": 3 },
+ {"id": 31, "label": "Sympathie et société", "parent": 3 },
  {"id": 311, "label": "La sociabilité", "parent": 31 },
  {"id": 312, "label": "Les limites de la sympathie", "parent": 31 },
  {"id": 313, "label": "La critique de l'état de nature et du contrat", "parent": 31 },
@@ -50,10 +50,10 @@
  {"id": 324, "label": "Fonction négative de l'Etat", "parent": 32 },
  {"id": 33, "label": "La main invisible", "parent": 3 }
  ],
- "les_ecrits_epistemologiques_et_esthetiques": [
- {"id": 4, "label": "Les écrits épistémologiques et esthétiques", "name": "les_ecrits_epistemologiques_et_esthetiques", "position": "root", "parent": null},
- {"id": 41, "label": "histoire de l'astronomie", "parent": 4 },
- {"id": 411, "label": "La surprise, l'étonnement", "parent": 41 },
+ "epistemologie_et_esthetique": [
+ {"id": 4, "label": "Épistémologie et esthétique", "name": "epistemologie_et_esthetique", "position": "root", "parent": null},
+ {"id": 41, "label": "Histoire de l'astronomie", "parent": 4 },
+ {"id": 411, "label": "La surprise, l'étonnement, l'admiration", "parent": 41 },
  {"id": 412, "label": "Les liaisons imaginatives", "parent": 41 },
  {"id": 413, "label": "La main invisible dans le champ scientifique", "parent": 41 },
  {"id": 42, "label": "Esthétique", "parent": 4},

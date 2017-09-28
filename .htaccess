@@ -4,6 +4,10 @@ RewriteRule search/(.+)/$ query/index.php?query=$1 [L]
 RewriteRule search/(.+)$ query/index.php?query=$1 [L]
 RewriteRule search/?$ / [R]
 
+RewriteRule search-fh/(.+)/$ francis-hutcheson/query/index.php?query=$1 [L]
+RewriteRule search-fh/(.+)$ francis-hutcheson/query/index.php?query=$1 [L]
+RewriteRule search-fh/?$ / [R]
+
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
     #Header set Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"

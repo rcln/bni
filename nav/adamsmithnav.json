@@ -2,6 +2,6 @@
     {"id": 0, "label": "Adam SMITH",                                 "name": "adam_smith", "position": "root",  "parent": null, "image": "adam-smith.jpg" },
     {"id": 1, "label": "Philosophie morale",                         "name": "philosophie_morale", "position": "rigth", "parent": 0},     
     {"id": 2, "label": "Economie",                                   "name": "economie", "position": "rigth", "parent": 0},     
-    {"id": 3, "label": "Philosophie  Politique",                     "name": "philosophie_politique", "position": "left",  "parent": 0},     
-    {"id": 4, "label": "Les écrits épistémologiques et esthétiques", "name": "les_ecrits_epistemologiques_et_esthetiques", "position": "left",  "parent": 0}     
+    {"id": 3, "label": "Épistémologie et esthétique", "name": "epistemologie_et_esthetique", "position": "left",  "parent": 0},
+    {"id": 4, "label": "Philosophie politique",                     "name": "philosophie_politique", "position": "left",  "parent": 0}
 ]
