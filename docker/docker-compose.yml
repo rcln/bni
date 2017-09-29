@@ -1,8 +1,9 @@
 version: '2'
 services:
-  solr:
+  bni-solr:
     image: solr:6.6.1-alpine
     container_name: bni-solr
+    restart: always
     build: 
       context: ./docker-solr/6.6/alpine # from https://github.com/docker-solr/docker-solr 
       args: 
