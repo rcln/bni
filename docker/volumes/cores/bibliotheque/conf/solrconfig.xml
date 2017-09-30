@@ -45,6 +45,7 @@
     <lst name="defaults">
       <str name="echoParams">explicit</str>
       <str name="df">text</str>
+      <int name="rows">10000</int>
     </lst>
   </requestHandler>
 

@@ -25,9 +25,12 @@
   <field name="title" type="text_simple" indexed="true" stored="true"/>
   <field name="last_modified" type="date" indexed="true" stored="true" />
   <field name="file_name" type="text_simple" indexed="true" stored="true" />
+  <field name="file_name_hash" type="text_simple" indexed="true" stored="true" />
+  <field name="page_hash" type="text_simple" indexed="true" stored="true" />
 
   <field name="p" type="text_simple" indexed="true" stored="true"/>
-  <field name="page" type="text_simple" indexed="true" stored="true"/>
+  <field name="page" type="integer" indexed="true" stored="true"/>
+  <field name="skip" type="text_simple" indexed="true" stored="true"/>
 
   <!-- field "text" is searchable (it is the default search field) but it is not stored to save space -->
   <field name="text" type="text_simple" indexed="true" stored="false" multiValued="true"/>
@@ -41,6 +44,8 @@
 
   <!-- The StrField type is not analyzed, but is indexed/stored verbatim. -->
   <fieldType name="string" class="solr.StrField" sortMissingLast="true"/>
+
+  <fieldType name="integer" class="solr.TrieIntField" sortMissingLast="true"/>
 
 
   <!-- A basic text field that has reasonable, generic
