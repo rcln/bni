@@ -34,6 +34,9 @@
                         <field column="page_hash" name="page_hash" xpath="/html/body/div/p/@page_hash" />
                         <field column="title" name="title" xpath="/html/body/div/p/@title" />
                         <field column="skip" name="skip" xpath="/html/body/div/p/@skip" />
+                        <field column="lang" name="lang" xpath="/html/body/div/p/@book_lang" />
+                        <field column="type" name="type" xpath="/html/body/div/p/@book_type" />
+                        <field column="author" name="author" xpath="/html/body/div/p/@author" />
                         <!-- field column="type" name="type" xpath="/html/head/meta[@name='type']/@content" commonField="true" /-->
                         <!--field column="section" name="section" xpath="/html/body/div/p[@class='section']" commonField="true"/>
                         <field column="chapter" name="chapter" xpath="/html/body/div/p[@class='chapter']" commonField="true"/>

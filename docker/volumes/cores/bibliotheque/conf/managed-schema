@@ -31,6 +31,9 @@
   <field name="p" type="text_simple" indexed="true" stored="true"/>
   <field name="page" type="integer" indexed="true" stored="true"/>
   <field name="skip" type="text_simple" indexed="true" stored="true"/>
+  <field name="lang" type="text_simple" indexed="true" stored="true"/>
+  <field name="type" type="text_simple" indexed="true" stored="true"/>
+  <field name="author" type="text_simple" indexed="true" stored="true"/>
 
   <!-- field "text" is searchable (it is the default search field) but it is not stored to save space -->
   <field name="text" type="text_simple" indexed="true" stored="false" multiValued="true"/>
