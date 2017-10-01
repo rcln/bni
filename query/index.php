@@ -99,29 +99,33 @@
                     </form>
                 </div>
 
-                <div class="mdl-card mdl-card--expand mdl-cell mdl-cell--12-col mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-                    <div class="mdl-card__supporting-text mdl-cell mdl-cell--12-col ">
-                        <div class="query-from">
-                            <span class="mdl-color-text--blue-grey-900">Résultats:</span> 
-                            <span class="mdl-color-text--blue-grey-900 title-bold"><?php echo $_REQUEST["query"];?></span>
-                        </div>
-                        <div id="result-not-found" style="display: none;">
-                            <h5 class="center">Aucun résultat trouvé pour "<b><?php echo $_REQUEST["query"];?></b>".</h5>
-                        </div> 
-                        <div id="result">
-                            <div id="result-items" style="display: none;" >
-                                <h4 class="title-bold mdl-color-text--deep-orange-900">Par oeuvre</h4>
+                <div id="result" class="mdl-cell 
+                            mdl-cell--12-col mdl-cell--12-col-desktop 
+                            mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                        <div style="background-color: transparent;" class="mdl-card mdl-card--expand mdl-cell mdl-cell--12-col">
+                            <div class="query-from mdl-card__supporting-text  mdl-cell mdl-cell--12-col">
+                                <span class="mdl-color-text--blue-grey-900">Résultats:</span> 
+                                <span class="mdl-color-text--blue-grey-900 title-bold"><?php echo $_REQUEST["query"];?></span>
+                            </div>
+                            <div id="result-not-found" class="mdl-card__supporting-text mdl-cell mdl-cell--12-col" style="display: none;">
+                                <h5 class="center">Aucun résultat trouvé pour "<b><?php echo $_REQUEST["query"];?></b>".</h5>
+                            </div>
+                            <div id="result-items" class="mdl-cell mdl-cell--12-col" style="display: none;" >
+                                <div class="mdl-card__title">
+                                    <h4 class="mdl-card__title-text mdl-color-text--deep-orange-900">Par oeuvre</h4>
+                                </div>
                                 <div id="works">
                                 </div>
                             </div>
-                            <div id="concepts">
-                                <h4 class="title-bold mdl-color-text--deep-orange-900">Concepts philosophiques</h4>
-                                <div class="mdl-card mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                            <div id="concepts" class="mdl-cell mdl-cell--12-col">
+                                <div class="mdl-card__title">
+                                    <h4 class="mdl-card__title-text mdl-color-text--deep-orange-900">Concepts philosophiques</h4>
+                                </div>
+                                <div class="mdl-card__media mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
                                     <svg id="ontograph"></svg>
                                 </div> 
                             </div> 
                         </div> 
-                     </div>
                 </div>
             </section>
         </main>
@@ -136,7 +140,7 @@
     <script src="js/search.js"></script>
     <script src="js/d3.v4.min.js"></script>
     <script src="js/onto.d3.js"></script>
-    <script src="js/solr.query.js"></script>
+    <script src="js/solr.query-beta.js"></script>
     <script>
         var query_string = decodeURI('<?php echo $query_string; ?>'); 
         bnisolr(query_string);

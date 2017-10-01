@@ -140,7 +140,7 @@
         var default_author_search = "/bni/francis-hutcheson/search-fh/";
     </script>
     <script src="js/onto.d3.js"></script>
-    <script src="js/solr.query.js"></script>
+    <script src="js/solr.query-beta.js"></script>
     <script>
         var query_string = decodeURI('<?php echo $query_string; ?>'); 
         bnisolr(query_string);
