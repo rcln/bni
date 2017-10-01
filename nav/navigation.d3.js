@@ -128,7 +128,7 @@ function navigation(){
 
         var root_node = g.selectAll(".node-side--root");
         var default_circle_root_size = default_circle_size*1.3;
-        root_node.select("circle").remove();
+        //root_node.select("circle").remove();
         root_node
             .append("defs")
             .append("clipPath")
