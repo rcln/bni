@@ -275,11 +275,11 @@ main .header-img-avatar {
 }
 
 /* style */
-.mdl-card__title-text {
+/*.mdl-card__title-text {
     color: white;
-}
+}*/
 .mdl-card {
-    /* background-color: transparent; */
+    background-color: #fdfdfd;
 }
 .mdl-card__supporting-text {
     color: black;    
