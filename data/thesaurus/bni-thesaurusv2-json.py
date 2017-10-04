@@ -109,8 +109,8 @@ def main():
         #print(get_variants(concept_label_string), get_variants(concept_preflabel_string))
         #concept_id = normalize_concept(attribute_name(concept))
         concept_setdefault(concepts, concept_id)
-        concept_set_label(concepts, concept_id, concept_variants_label, concept_variants_preflabel) #Eng & Fr
-        #concept_set_label(concepts, concept_id, concept_variants_preflabel, concept_variants_label) #Fr & Eng
+        #concept_set_label(concepts, concept_id, concept_variants_label, concept_variants_preflabel) #Eng & Fr
+        concept_set_label(concepts, concept_id, concept_variants_preflabel, concept_variants_label) #Fr & Eng
         concept_add_parent(concepts, current_parent_id, concept_id)
         concept_add_child(concepts, current_parent_id, concept_id)
     concepts_normalize(concepts)
