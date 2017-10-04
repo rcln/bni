@@ -11,7 +11,7 @@ books = {
     #Oeuvres Adam Smith :
     #Histoiredelastronomie.docx : Histoire de l’astronomie in Essais philosophiques, éditions coda, 2006. 
     'cb8b6e849e': { 
-        'title': "Histoire de l’astronomie in Essais philosophiques, éditions coda, 2006."
+        'title': "Histoire de l'astronomie in Essais philosophiques, éditions coda, 2006."
     },
     #LecturesOnRhetoricAndBellesLettres.docx : Lectures on Rhetoric and Belles lettres Liberty fund, indianapolis, 1985. (Traduction Jeanne Szpirglas)
     '0607eb6d87': { 
@@ -57,6 +57,9 @@ books = {
     'bf59acd9fd': { 
         'title': 'Système de philosophie morale, Traduction Jeanne Szpirglas, éditeur Vrin, Paris, 2016.'
     },
+    '6166219c00': { 
+        'title': 'Système de philosophie morale, Traduction Jeanne Szpirglas, éditeur Vrin, Paris, 2016.'
+    },
     #Recherches_sur_l'origine_des_idées_%5B...%5DHutcheson_Francis_bpt6k6484745m.pdf : Recherches sur l'origine des idées que nous avons de la beauté et de la vertu, en deux traités. Tome I. Traduction française de Marc- Antoine Eidous, Amsterdam, 1749.
     '4a8a218c66': {
         'title': "Recherches sur l'origine des idées que nous avons de la beauté et de la vertu, en deux traités. Tome I. Traduction française de Marc- Antoine Eidous, Amsterdam, 1749."
@@ -92,7 +95,7 @@ def normalizing_xml_from_tika(f_xml):
     pages = body.findall(xpath_ + "div[@class='page']") # One div represents a page in Tika format
 
     page_number = 0 # Page counter
-    min_number_of_tokens = 18
+    min_number_of_tokens = 5
     file_name = path.basename(f_xml).replace(".xml","") # Get file_name
     file_name_hash = hashlib.sha1(file_name.encode("UTF-8")).hexdigest()[:10] # generate hash
 
@@ -110,7 +113,7 @@ def normalizing_xml_from_tika(f_xml):
     books[file_name_hash]["lang"] = book_lang
     books[file_name_hash]["type"]= book_type
     
-    books[file_name_hash].setdefault("skip", 20)
+    books[file_name_hash].setdefault("skip", 0)
     pages_to_skip = books[file_name_hash]["skip"] # pages to skip
 
     books[file_name_hash].setdefault("title", file_name)
@@ -141,7 +144,7 @@ def normalizing_xml_from_tika(f_xml):
     #print(f_xml)
     if books[file_name_hash]["lang"] == "fr" and \
             books[file_name_hash]["type"] == "primary_literature" and \
-            books[file_name_hash]["author"] == "adam-smith":
+            books[file_name_hash]["author"] != "adam-smith":
         print(file_name_hash, str(books[file_name_hash]))
 
 def get_files_xml(path_to_files):
