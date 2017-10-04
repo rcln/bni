@@ -11,6 +11,13 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-1.10.2.js"></script>
 
+    <script src="js/bni-config.js"></script>
+    <script>
+        var default_author_id = "adam-smith"; 
+        var default_author = "Adam Smith"; 
+        var default_author_ref = "d'Adam Smith"; 
+    </script>
+
     <style>
     footer.mdl-mini-footer {
         padding: 32px 16px !important;
@@ -19,7 +26,6 @@
 
     }
     </style>
-
 </head>
 <body class="sticky-footer">
     <div class="container mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
@@ -33,37 +39,6 @@
                 </nav>
             </div>
         </header>
-        <style>
-            .node circle {
-                fill: #2a7c92;
-                cursor: pointer;
-            }
-            .node circle:hover {
-            }
-
-            .node text {
-                font: 10pt sans-serif;
-                cursor: pointer;
-            }
-            .node--internal circle {
-                fill: #555;
-            }
-            .node--internal text {
-              text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
-            }
-            .node circle#circle-root {
-            }
-            .link {
-              fill: none;
-              stroke: #555;
-              stroke-opacity: 0.4;
-              stroke-width: 1.5px;
-            }
-            #back-to-graph {
-                margin-top: -100px;
-                margin-left: 10px;        
-            }
-        </style>
         <main class="content content-flex">
                 <div class="mdl-grid">
                     <div class="mdl-cell--6-col">
@@ -88,12 +63,27 @@
                         </form>
                     </div>
                 </div>
-                <svg id="navigation"></svg>
-                <button id="back-to-graph" class="mdl-button mdl-js-button mdl-button--fab" style="display: none;">
-                    <i class="material-icons">arrow_back</i>
-                </button>
-                <script src="js/d3.v4.min.js"></script>
-                <script src="nav/navigation.d3.js"></script>
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card mdl-card__supporting-text mdl-cell--12-col">
+                            <div class="mdl-card__title">
+                                <h4 class="mdl-card__title-text mdl-color-text--deep-orange-900">Œuvres indexées</h4>
+                            </div>
+                            <div class="mdl-card mdl-shadow--2dp mdl-cell--12-col">
+                                <div class="mdl-card__title">
+                                    <h2 class="mdl-card__title-text mdl-color-text--black">Adam Smith</h2>
+                                </div>
+                                <ul id="oeuvres-as"></ul>
+                            </div>
+                            <div class="mdl-card mdl-shadow--2dp mdl-cell--12-col">
+                                <div class="mdl-card__title">
+                                    <h2 class="mdl-card__title-text mdl-color-text--black">Francis Hutcheson</h2>
+                                </div>
+                                <ul id="oeuvres-fh"></ul>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
         </main>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
@@ -102,5 +92,6 @@
         </footer>
     </div>
     <script src="js/search.js"></script>
+    <script src="js/list-works.js"></script>
 </body>
 </html>
