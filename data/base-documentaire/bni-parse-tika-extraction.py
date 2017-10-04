@@ -7,46 +7,82 @@ from os import path
 from functools import reduce
 import hashlib
 
-books = { 
-        '0aa143883f': {'author': 'adam-smith', 'author-label': 'Adam Smith', 'lang': 'en', 'type': 'primary_literature'},
-        '2b76d54304': {'author': 'adam-smith', 'author-label': 'Adam Smith', 'lang': 'en', 'type': 'primary_literature'},
-        '4b901623e0': {'author': 'adam-smith', 'author-label': 'Adam Smith', 'lang': 'en', 'type': 'primary_literature'},
-        '085e52c595': {'author': 'adam-smith', 'author-label': 'Adam Smith', 'lang': 'fr', 'type': 'primary_literature'},
-        'e9b420c553': {'author': 'adam-smith', 'author-label': 'Adam Smith', 'lang': 'fr', 'type': 'primary_literature'},
-        'c69b7fa1b9': {'author': 'adam-smith', 'author-label': 'Adam Smith', 'lang': 'fr', 'type': 'primary_literature'},
-        '7bdb388b0a': {'author': 'adam-smith', 'author-label': 'Adam Smith', 'lang': 'fr', 'type': 'primary_literature'},
-        'df5bd1cdc4': {'author': 'adam-smith', 'author-label': 'Adam Smith', 'lang': 'fr', 'type': 'primary_literature'},
-        'cbb1c9443e': {'author': 'adam-smith', 'author-label': 'Adam Smith', 'lang': 'fr', 'type': 'primary_literature'},
-        '396def3367': {'author': 'adam-smith', 'author-label': 'Adam Smith', 'lang': 'fr', 'type': 'primary_literature'},
-        #francis-hutcheson
-        'c3d66c622a': {'author': 'francis-hutcheson', 'author-label': 'Francis Hutcheson', 'lang': 'fr', 'type': 'primary_literature'},
-        'd6d7f2ab5d': {'author': 'francis-hutcheson', 'author-label': 'Francis Hutcheson', 'lang': 'fr', 'type': 'primary_literature'},
-        'e75f25bae0': {'author': 'francis-hutcheson', 'author-label': 'Francis Hutcheson', 'lang': 'fr', 'type': 'primary_literature'},
-        '53368b4a2d': {'author': 'francis-hutcheson', 'author-label': 'Francis Hutcheson', 'lang': 'fr', 'type': 'primary_literature'}
+books = {
+    #Oeuvres Adam Smith :
+    #Histoiredelastronomie.docx : Histoire de l’astronomie in Essais philosophiques, éditions coda, 2006. 
+    'cb8b6e849e': { 
+        'title': "Histoire de l’astronomie in Essais philosophiques, éditions coda, 2006."
+    },
+    #LecturesOnRhetoricAndBellesLettres.docx : Lectures on Rhetoric and Belles lettres Liberty fund, indianapolis, 1985. (Traduction Jeanne Szpirglas)
+    '0607eb6d87': { 
+        'title': "Lectures on Rhetoric and Belles lettres Liberty fund, indianapolis, 1985. (Traduction Jeanne Szpirglas)"
+    },
+    #Leçons%20sur%20la%20jurisprudence%20Adam%20Smith_usage_reserve.pdf : Leçons sur la jurisprudence, Traduction, préface et notes de Henri Commetti, éditeur Dalloz, 2009
+    '7884afbfcf': { 
+        'title': "Leçons sur la jurisprudence, Traduction, préface et notes de Henri Commetti, éditeur Dalloz, 2009",
+        'skip': 32
+    },
+    #richesse_des_nations_1.pdf : Recherches sur la nature et les causes de la richesse des nations, Livre I. Traduction française de Germain Garnier, 1881 à partir de l’édition revue par Adolphe Blanqui en 1843.
+    '320ec2ace5': { 
+        'title': "Recherches sur la nature et les causes de la richesse des nations, Livre I. Traduction française de Germain Garnier, 1881 à partir de l’édition revue par Adolphe Blanqui en 1843.",
+        'skip': 14
+    },
+    #richesse_des_nations_2.pdf : recherches sur la nature et les causes de la richesse des nations, Livre II. Traduction française de Germain Garnier, 1881 à partir de l’édition revue par Adolphe Blanqui en 1843.
+    '6b84b59c0e': { 
+        'title': "Recherches sur la nature et les causes de la richesse des nations, Livre II. Traduction française de Germain Garnier, 1881 à partir de l’édition revue par Adolphe Blanqui en 1843.",
+        'skip': 7
+    },
+    #richesse_des_nations_3.pdf : Recherches sur la nature et les causes de la richesse des nations, Livre III. Traduction française de Germain Garnier, 1881 à partir de l’édition revue par Adolphe Blanqui en 1843.
+    '8c294763ab': { 
+        'title': "Recherches sur la nature et les causes de la richesse des nations, Livre III. Traduction française de Germain Garnier, 1881 à partir de l’édition revue par Adolphe Blanqui en 1843.",
+        'skip': 7
+    },
+    #richesse_des_nations_4.pdf : Recherches sur la nature et les causes de la richesse des nations, Livre IV. Traduction française de Germain Garnier, 1881 à partir de l’édition revue par Adolphe Blanqui en 1843.
+    '8270bcd4db': { 
+        'title': "Recherches sur la nature et les causes de la richesse des nations, Livre IV. Traduction française de Germain Garnier, 1881 à partir de l’édition revue par Adolphe Blanqui en 1843.",
+        'skip': 8
+    },
+    #richesse_des_nations_5.pdf : Recherches sur la nature et les causes de la richesse des nations, Livre V. Traduction française de Germain Garnier, 1881 à partir de l’édition revue par Adolphe Blanqui en 1843.
+    'e2a28d4e1d': { 
+        'title': "Recherches sur la nature et les causes de la richesse des nations, Livre V. Traduction française de Germain Garnier, 1881 à partir de l’édition revue par Adolphe Blanqui en 1843.",
+        'skip': 8
+    },
+    #Theoriedessentimentsmoraux%20usage%20réservé.pdf : Théorie des sentiments moraux. Texte traduit, introduit et annoté par Michaël Biziou, Claude Gautier, Jean-François Pradeau, éditeur PUF, 1999.
+    'f826c7519e': { 
+        'title': "Théorie des sentiments moraux. Texte traduit, introduit et annoté par Michaël Biziou, Claude Gautier, Jean-François Pradeau, éditeur PUF, 1999.",
+        'skip': 26
+    },
+    #Oeuvres Francis Hutcheson :
+    #système%20de%20philosophie%20morale.doc :  Système de philosophie morale, Traduction Jeanne Szpirglas, éditeur Vrin, Paris, 2016.
+    'bf59acd9fd': { 
+        'title': 'Système de philosophie morale, Traduction Jeanne Szpirglas, éditeur Vrin, Paris, 2016.'
+    },
+    #Recherches_sur_l'origine_des_idées_%5B...%5DHutcheson_Francis_bpt6k6484745m.pdf : Recherches sur l'origine des idées que nous avons de la beauté et de la vertu, en deux traités. Tome I. Traduction française de Marc- Antoine Eidous, Amsterdam, 1749.
+    '4a8a218c66': {
+        'title': "Recherches sur l'origine des idées que nous avons de la beauté et de la vertu, en deux traités. Tome I. Traduction française de Marc- Antoine Eidous, Amsterdam, 1749."
+    },
+    #Recherches_sur_l'origine_des_idées_%5B...%5DHutcheson_Francis_bpt6k65225506.pdf : Recherches sur l'origine des idées que nous avons de la beauté et de la vertu, en deux traités. Tome II. Traduction française de Marc- Antoine Eidous, Amsterdam, 1749.
+    '9094cbb1cc': {
+        'title': "Recherches sur l'origine des idées que nous avons de la beauté et de la vertu, en deux traités. Tome II. Traduction française de Marc- Antoine Eidous, Amsterdam, 1749."
+    },
+    #Trad_Short_intro..La_Philosophie_naturelle_civile_et_%5B...%5DHutcheson_Francis_bpt6k9633252f.pdf : La Philosophie naturelle civile et morale. Traduction de Marc-Antoine Eidous, éditeur Regnault, Lyon, 1770.
+    'dc4e48f2dc': {
+        'title': 'La Philosophie naturelle civile et morale. Traduction de Marc-Antoine Eidous, éditeur Regnault, Lyon, 1770.'
     }
+}
 
+authors = {
+    'adam-smith': 'Adam Smith',
+    'francis-hutcheson': 'Francis Hutcheson'
+}
 
-def set_books_metadata():
-    global books 
-    books['0aa143883f']['title'] = 'The Theory of Moral Sentiments'.capitalize()
-    books['2b76d54304']['title'] = 'An Inquiry Into the Nature and Causes of The Wealth Of Nations'.capitalize()
-    books['4b901623e0']['title'] = 'LECTURES ON JURISPRUDENCE'.capitalize()
-    books['7bdb388b0a']['title'] = 'RECHERCHES SUR LA NATURE ET LES CAUSES DE LA RICHESSE DES NATIONS 1'.capitalize()
-    books['7bdb388b0a']['skip'] = 14
-    books['085e52c595']['title'] = 'RECHERCHES SUR LA NATURE ET LES CAUSES DE LA RICHESSE DES NATIONS 2'.capitalize()
-    books['085e52c595']['skip'] = 7
-    books['e9b420c553']['title'] = 'RECHERCHES SUR LA NATURE ET LES CAUSES DE LA RICHESSE DES NATIONS 3'.capitalize()
-    books['e9b420c553']['skip'] = 7
-    books['c69b7fa1b9']['title'] = 'RECHERCHES SUR LA NATURE ET LES CAUSES DE LA RICHESSE DES NATIONS 4'.capitalize()
-    books['c69b7fa1b9']['skip'] = 8
-    books['cbb1c9443e']['title'] = 'RECHERCHES SUR LA NATURE ET LES CAUSES DE LA RICHESSE DES NATIONS 5'.capitalize()
-    books['cbb1c9443e']['skip'] = 8
-    books['df5bd1cdc4']['title'] = 'Leçons sur la jurisprudence'
-    books['df5bd1cdc4']['skip'] = 32
-    books['396def3367']['title'] = 'Théorie des sentiments moraux'
-    books['396def3367']['skip'] = 26
+types = {
+    'primaire': "primary_literature",
+    'secondaire': "secondary_literature"
+}
 
 def normalizing_xml_from_tika(f_xml):
+
     tree = etree.parse(f_xml)
     root = tree.getroot()
     namespace = tree.xpath('namespace-uri(.)')
@@ -57,21 +93,29 @@ def normalizing_xml_from_tika(f_xml):
 
     page_number = 0 # Page counter
     min_number_of_tokens = 18
-    file_name = path.basename(f_xml).replace(".pdf.xml","") # Get file_name
+    file_name = path.basename(f_xml).replace(".xml","") # Get file_name
     file_name_hash = hashlib.sha1(file_name.encode("UTF-8")).hexdigest()[:10] # generate hash
 
     books.setdefault(file_name_hash, {})
-    if not books[file_name_hash]:
-        logging.debug(file_name_hash + ":" + f_xml)
 
-    set_books_metadata() #get books's metadata
-    title = books[file_name_hash]["title"] if "title" in books[file_name_hash] else "file_name: " + file_name #set title
-    pages_to_skip = books[file_name_hash]["skip"] if "skip" in books[file_name_hash] else 20 # pages to skip
-    book_lang = books[file_name_hash]["lang"] if "lang" in books[file_name_hash] else "None" #set title
-    book_type = books[file_name_hash]["type"] if "type" in books[file_name_hash] else "None" #set title
-    author = books[file_name_hash]["author"] if "author" in books[file_name_hash] else "None"  #set title
-    author_label = books[file_name_hash]["author-label"] if "author-label" in books[file_name_hash] else "None" #set title
+    path_info = f_xml.split("/")[-4:-1] # author, type, language
+    author = path_info[0]
+    author_label = authors[author] #set title
+    book_type = types[path_info[1]]
+    book_lang = path_info[2].lower()[:2]
+
+    books[file_name_hash]["file_name_hash"] = file_name_hash
+    books[file_name_hash]["author"] = author
+    books[file_name_hash]["author-label"] = authors[author]
+    books[file_name_hash]["lang"] = book_lang
+    books[file_name_hash]["type"]= book_type
     
+    books[file_name_hash].setdefault("skip", 20)
+    pages_to_skip = books[file_name_hash]["skip"] # pages to skip
+
+    books[file_name_hash].setdefault("title", file_name)
+    title = books[file_name_hash]["title"] #set title
+
     for page in pages:
         page_number += 1
         page_hash = hashlib.sha1((file_name_hash + str(page_number)).encode("UTF-8")).hexdigest()[:10] # generate page hash
@@ -94,7 +138,11 @@ def normalizing_xml_from_tika(f_xml):
 
     tree.write(f_xml) #Save modifications
 
-    logging.debug("'{1}': {{'pages':{0:>5}, 'file_name': '{2}'}},".format(page_number, file_name_hash, file_name))
+    #print(f_xml)
+    if books[file_name_hash]["lang"] == "fr" and \
+            books[file_name_hash]["type"] == "primary_literature" and \
+            books[file_name_hash]["author"] == "adam-smith":
+        print(file_name_hash, str(books[file_name_hash]))
 
 def get_files_xml(path_to_files):
     for dirpath, dirnames, filenames in os.walk(path_to_files):
