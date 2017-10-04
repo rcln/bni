@@ -153,9 +153,6 @@ main .header-img-avatar {
     cursor: pointer;
 }
 
-.mdl-card__media--custom {
-    /* background-color: #cfcfcf; */
-}
 
 .main-title {
     font-size: 6vh;
@@ -279,7 +276,7 @@ main .header-img-avatar {
     color: white;
 }*/
 .mdl-card {
-    background-color: #fdfdfd;
+    background-color: #fdfdfd !important;
 }
 .mdl-card__supporting-text {
     color: black;    
@@ -291,7 +288,10 @@ main .header-img-avatar {
         
 }
 .mdl-card__media {
-    background-color: #f3f3f3;
+    background-color: #f3f3f3 !important;
+}
+.mdl-card__media--custom {
+    background-color: #f3f3f3 !important; 
 }
 
 /*body {
