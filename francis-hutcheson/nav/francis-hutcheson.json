@@ -4,5 +4,5 @@
     {"id": 2, "label": "Théologie",             "name": "theologie", "position": "rigth", "parent": 0},     
     {"id": 3, "label": "Le droit",              "name": "le_droit", "position": "rigth",  "parent": 0},     
     {"id": 4, "label": "Économie",              "name": "economie", "position": "left", "parent": 0},     
-    {"id": 5, "label": "Politique",             "name": "politique", "position": "left",  "parent": 0}     
+    {"id": 5, "label": "Philosophie politique",             "name": "politique", "position": "left",  "parent": 0}     
 ]
