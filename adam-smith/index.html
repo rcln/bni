@@ -27,27 +27,43 @@
                 <div class="img-container">
                     <img class="img-avatar" src="adam-smith.jpg" style="margin-left: -4vh;">
                 </div>
-                <h3 class="center main-title">Adam Smith</h3>
-            </div>
-            <form action="/bni/search/" class="search search--primary" autocomplete="off">
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input id="query" class="mdl-textfield__input query-welcome" type="text" placeholder="Recherche ...">
+                <div class="main-title-container">
+                    <div>
+                        <h3 class="center main-title">Adam Smith</h3>
+                        <h5 class="main-title-dates">1723 - 1790</h6>
                     </div>
-                    <button id="search" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                    <div>
+                        <a class="mdl-color-text--green-900" href="/bni/adam-smith/oeuvres/">
                         <label class="mdl-button mdl-js-button mdl-button--icon">
-                            <i class="material-icons">search</i>
+                            <i class="material-icons">chrome_reader_mode</i>
                         </label>
-                        Chercher
-                    </button>
-                <div style="text-align: center; padding: 5px;">
-                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="/bni/adam-smith/nav/" style="margin-left: -26px;">Naviguer</a>
-                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="/bni/adam-smith/oeuvres/">Œuvres</a>
+                        Liste des œuvres</a>
+                    </div>
                 </div>
+            </div>
+            <form action="/bni/adam-smith/search/" class="search search--primary" autocomplete="off">
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input id="query" class="mdl-textfield__input query-welcome" type="text" placeholder="Recherche ...">
+                </div>
+                <button id="search" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                    <label class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="material-icons">search</i>
+                    </label>
+                    Chercher
+                </button>
+                <br />
+                    <div class="mdl-textfield mdl-js-textfield" style="visibility: hidden;">
+                        <input class="mdl-textfield__input" type="text" style="visibility: hidden;" >
+                    </div>
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="/bni/adam-smith/nav/" style="margin-left: -26px;">Naviguer</a>
             </form>
         </main>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
                 <div class="mdl-logoi really-mini">Financé par le Labex EFL</div>
+                <div class="mdl-logoi really-mini">
+                    La plupart des oeuvres indexées proviennent de Gallica. Nous remercions les éditeurs Dalloz, PUF et Vrin pour avoir mis à notre disposition «Leçons sur la jurisprudence»,"Théorie des sentiments moraux» d’Adam Smith et «Le système de philosophie morale» de Francis Hutcheson. 
+                </div>
             </div>
         </footer>
     </div>

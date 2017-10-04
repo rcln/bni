@@ -132,8 +132,12 @@
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
                 <div class="mdl-logoi really-mini">Financé par le Labex EFL</div>
+                <div class="mdl-logoi really-mini">
+                    La plupart des oeuvres indexées proviennent de Gallica. Nous remercions les éditeurs Dalloz, PUF et Vrin pour avoir mis à notre disposition «Leçons sur la jurisprudence»,"Théorie des sentiments moraux» d’Adam Smith et «Le système de philosophie morale» de Francis Hutcheson. 
+                </div>
             </div>
         </footer>
+
     </div>
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/main.js"></script>
