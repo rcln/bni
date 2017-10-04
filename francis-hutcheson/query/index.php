@@ -142,6 +142,7 @@
     <script>
         var url_thesaurus = "data/thesaurus/bni-thesaurus-francis-hutcheson.json";
         var default_author_search = "/bni/francis-hutcheson/search-fh/";
+        var default_author = "francis-hutcheson";
     </script>
     <script src="js/onto.d3.js"></script>
     <script src="js/solr.query-beta.js"></script>

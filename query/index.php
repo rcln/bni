@@ -121,7 +121,7 @@
                                 <div class="mdl-card__title">
                                     <h4 class="mdl-card__title-text mdl-color-text--deep-orange-900">Concepts philosophiques</h4>
                                 </div>
-                                <div class="mdl-card__media mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                                <div class="mdl-card__media mdl-card__media--custom mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
                                     <svg id="ontograph"></svg>
                                 </div> 
                             </div> 

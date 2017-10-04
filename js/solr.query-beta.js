@@ -8,6 +8,10 @@ $.ajax({
     }
 });
 
+if(typeof default_author == "undefined"){
+    default_author = "adam-smith";
+}
+
 function bnisolr(query_string){
     query_string = query_string.trim().replace(/[:,.]/gi, "");
     var word_list_qs = query_string.toLowerCase().split(/[\s']/).filter(function(w){ 
@@ -92,9 +96,11 @@ function bnisolr(query_string){
         return render_works;
     }
     $.getJSON(bnicfg.url_to_source_beta + 
-                "?wt=json&q=type:primary_literature%20AND%20p:(" + query_string_encoded + ")%20AND%20skip:false&group=true" +
+                "?wt=json&q=type:primary_literature%20AND%20p:(" + query_string_encoded + ")%20AND%20skip:false%20AND%20author:" + 
+                default_author + "%20AND%20lang:fr&group=true" +
                 "&group.field=file_name_hash&group.limit=30&sort=page%20asc", 
                 function(response){
+        console.log(default_author);
         console.log(response.grouped.file_name_hash.matches > 0);
         if(typeof response.grouped != 'undefined' && response.grouped.file_name_hash.matches > 0 ){
             $("#result-not-found").hide(); 
