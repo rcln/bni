@@ -155,7 +155,8 @@ main .header-img-avatar {
 }
 
 .main-title-container {
-    display: block;    
+    display: block;
+    text-align: center; 
 }
 
 .main-title-dates {
@@ -163,8 +164,7 @@ main .header-img-avatar {
 }
 
 .main-title-container .main-title {
-    margin: 14px;
-    margin-top: 0px;
+    margin: 0px;
 }
 
 .main-title {
