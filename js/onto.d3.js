@@ -88,6 +88,9 @@ function ontograph(start_node){
                                     "name": child["id"],
                                     "label": child["label"]
                                 };
+                        if(newchild.data.main){
+                           newchild.main = true; 
+                        }
                         if(curnode && curnode["name"] == newchild["name"]){
                             newchild = curnode;
                         }
@@ -96,7 +99,6 @@ function ontograph(start_node){
                 }else{
                     pnode.children = null;
                 }
-                console.log(pnode);
                 return (pnode["parent"] && pnode["parent"].length > 0)? make_graph(thesaurus[pnode["parent"][0]], pnode) : pnode;
             }else{
                 return curnode;
@@ -104,18 +106,27 @@ function ontograph(start_node){
         }
 
         var graph = {};
+        graph_extranodes = {};
 
         var was_term_found = false;
         var max_length_term = 0; 
+        var main_start_node = ""; 
         for(var sge in start_node){
             if(typeof term_list[start_node[sge]] != "undefined"){
+                node_in_ontology = term_list[start_node[sge]]
+                graph_extranodes[node_in_ontology["id"]] = node_in_ontology;
+                node_in_ontology["main"] = true;
                 if(max_length_term < start_node[sge].length){
-                    graph = term_list[start_node[sge]];
+                    graph = node_in_ontology;
                     was_term_found = true;
+                    main_start_node = start_node[sge];
                     max_length_term = start_node[sge].length;
                 }
             }
         }
+
+        delete graph_extranodes[term_list[main_start_node]["id"]];
+        console.log("GRAPH EXTRANODES", graph_extranodes);
         //console.log("max len", max_length_term, start_node);
 
         if(!was_term_found){
@@ -149,7 +160,7 @@ function ontograph(start_node){
                 .attr("d", position_link)
                 .attr("marker-end", "url(#end)");
 
-        var node_class = function(d) { 
+        var node_class = function(d) {
             return "node" + (d.children ? " node--internal" : " node--leaf") + ((d.data &&  d.data.main)? " node--main": ""); 
         }
     
