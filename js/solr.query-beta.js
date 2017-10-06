@@ -15,23 +15,25 @@ if(typeof default_author == "undefined"){
 function bnisolr(query_string){
     query_string = query_string.trim().replace(/\s+/gi, " ");
     query_string_list = query_string.toLowerCase().split(",");
-
     /* var word_list_qs = query_string.toLowerCase().split(/[\s']/).filter(function(w){
                                             return !(w == "" || stopwords_fr.hasOwnProperty(w.replace(/[:.,]/gi, "")));
                         });   */
-
     var multiterm_query = "";
     var word_list_qs = []
     for(var qstr in query_string_list){
         var full_new_term = query_string_list[qstr].trim();
-        var one_query_terms = full_new_term.split(/[\s']/);
+        var one_query_terms = full_new_term.split(/[\s]/);
         var filtered_word_list = one_query_terms.filter(function(w){
                                 return !(w == "" || stopwords_fr.hasOwnProperty(w.replace(/[:.,]/gi, "")));
                             });
         if(filtered_word_list.length > 0){
-            multiterm_query += ' OR ((' + filtered_word_list.join(' AND ') + ') OR "' + full_new_term + '")';
             word_list_qs.push(full_new_term);
-            word_list_qs = word_list_qs.concat(filtered_word_list);
+            if(filtered_word_list.length == 1){
+                multiterm_query += ' OR (' + full_new_term + ')';
+            }else{
+                multiterm_query += ' OR ((' + filtered_word_list.join(' AND ') + ') OR "' + full_new_term + '")';
+                word_list_qs = word_list_qs.concat(filtered_word_list);
+            }
         }
     }
     console.log("NEW QUERY!", word_list_qs, multiterm_query);
