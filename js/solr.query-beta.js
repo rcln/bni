@@ -13,20 +13,43 @@ if(typeof default_author == "undefined"){
 }
 
 function bnisolr(query_string){
-    query_string = query_string.trim().replace(/[:,.]/gi, "");
-    var word_list_qs = query_string.toLowerCase().split(/[\s']/).filter(function(w){ 
-                                            return !stopwords_fr.hasOwnProperty(w);
-                        });   
-    var addtional_query = word_list_qs.length > 0? " OR (" + word_list_qs.join(" AND ") + ")" : "";
-    //console.log(word_list_qs, addtional_query);
-    var query_string_encoded = encodeURIComponent(('"' + query_string + '"' + addtional_query));
+    query_string = query_string.trim().replace(/\s+/gi, " ");
+    query_string_list = query_string.toLowerCase().split(",");
+
+    /* var word_list_qs = query_string.toLowerCase().split(/[\s']/).filter(function(w){
+                                            return !(w == "" || stopwords_fr.hasOwnProperty(w.replace(/[:.,]/gi, "")));
+                        });   */
+
+    var multiterm_query = "";
+    var word_list_qs = []
+    for(var qstr in query_string_list){
+        var full_new_term = query_string_list[qstr].trim();
+        var one_query_terms = full_new_term.split(/[\s']/);
+        var filtered_word_list = one_query_terms.filter(function(w){
+                                return !(w == "" || stopwords_fr.hasOwnProperty(w.replace(/[:.,]/gi, "")));
+                            });
+        if(filtered_word_list.length > 0){
+            multiterm_query += ' OR ((' + filtered_word_list.join(' AND ') + ') OR "' + full_new_term + '")';
+            word_list_qs.push(full_new_term);
+            word_list_qs = word_list_qs.concat(filtered_word_list);
+        }
+    }
+    console.log("NEW QUERY!", word_list_qs, multiterm_query);
+
+    //var addtional_query = word_list_qs.length > 0? " OR (" + word_list_qs.join(" AND ") + ")" : "";
+    //console.log("Current query: ", word_list_qs, addtional_query);
+
+    //var query_string_encoded = encodeURIComponent(('"' + query_string + '"' + addtional_query));
+    var query_string_encoded = encodeURIComponent(('"' + query_string + '"' + multiterm_query));
+
     var term_list = word_list_qs;
     term_list.push(query_string.toLowerCase())
     console.log("term list", term_list);
-    var work_alias = {
+
+    /*var work_alias = {
                 "Théorie des sentiments moraux": 
                 {"pdf": "tds.pdf", "id": "tds", "page-offset": 21, "pdf-page-offset": 27 }
-            };
+            }; */ 
     console.log("Query string: ", query_string, query_string_encoded);
 
     var rendering_highligth = function(p_text){
