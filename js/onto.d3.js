@@ -125,7 +125,7 @@ function ontograph(start_node){
             }
         }
 
-        delete graph_extranodes[term_list[main_start_node]["id"]];
+        //delete graph_extranodes[term_list[main_start_node]["id"]];
         console.log("GRAPH EXTRANODES", graph_extranodes);
         //console.log("max len", max_length_term, start_node);
 
