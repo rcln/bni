@@ -136,7 +136,7 @@ def normalizing_xml_from_tika(f_xml):
             p.set("book_type", book_type) # Set type
             p.set("author", author) # Set type
             p.set("author-label", author_label) # Set type
-            show_page = True if p.text and len(p.text.split()) >= min_number_of_tokens else False
+            show_page = True if p.text and len(p.text.split()) >= min_number_of_tokens and not re.match('(\s+)?\d', p.text) else False
             p.set("skip", "false" if page_number > pages_to_skip and show_page else "true") # Skip pages 
     else:
         books[file_name_hash]["pages"] = page_number
