@@ -60,6 +60,9 @@ books = {
     '6166219c00': { 
         'title': 'Système de philosophie morale, Traduction Jeanne Szpirglas, éditeur Vrin, Paris, 2016.'
     },
+    '982a66db73': { 
+        'title': 'Système de philosophie morale, Traduction Jeanne Szpirglas, éditeur Vrin, Paris, 2016.'
+    },
     #Recherches_sur_l'origine_des_idées_%5B...%5DHutcheson_Francis_bpt6k6484745m.pdf : Recherches sur l'origine des idées que nous avons de la beauté et de la vertu, en deux traités. Tome I. Traduction française de Marc- Antoine Eidous, Amsterdam, 1749.
     '4a8a218c66': {
         'title': "Recherches sur l'origine des idées que nous avons de la beauté et de la vertu, en deux traités. Tome I. Traduction française de Marc- Antoine Eidous, Amsterdam, 1749."
