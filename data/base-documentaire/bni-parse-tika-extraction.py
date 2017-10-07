@@ -60,6 +60,9 @@ books = {
     '6166219c00': { 
         'title': 'Système de philosophie morale, Traduction Jeanne Szpirglas, éditeur Vrin, Paris, 2016.'
     },
+    '982a66db73': { 
+        'title': 'Système de philosophie morale, Traduction Jeanne Szpirglas, éditeur Vrin, Paris, 2016.'
+    },
     #Recherches_sur_l'origine_des_idées_%5B...%5DHutcheson_Francis_bpt6k6484745m.pdf : Recherches sur l'origine des idées que nous avons de la beauté et de la vertu, en deux traités. Tome I. Traduction française de Marc- Antoine Eidous, Amsterdam, 1749.
     '4a8a218c66': {
         'title': "Recherches sur l'origine des idées que nous avons de la beauté et de la vertu, en deux traités. Tome I. Traduction française de Marc- Antoine Eidous, Amsterdam, 1749."
@@ -133,7 +136,7 @@ def normalizing_xml_from_tika(f_xml):
             p.set("book_type", book_type) # Set type
             p.set("author", author) # Set type
             p.set("author-label", author_label) # Set type
-            show_page = True if p.text and len(p.text.split()) >= min_number_of_tokens else False
+            show_page = True if p.text and len(p.text.split()) >= min_number_of_tokens and not re.match('(\s+)?\d', p.text) else False
             p.set("skip", "false" if page_number > pages_to_skip and show_page else "true") # Skip pages 
     else:
         books[file_name_hash]["pages"] = page_number
