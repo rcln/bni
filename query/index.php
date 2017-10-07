@@ -77,7 +77,7 @@
         <main class="content mdl-layout__content">
             <section class="mdl-grid">
                 <div class="mdl-cell--6-col">
-                    <div class="header-img-avatar--secondary">
+                    <div class="header-img-avatar--secondary" onClick="window.open('/bni/adam-smith/', '_self');">
                         <div class="img-container">
                             <img class="img-avatar--secondary" src="adam-smith.jpg" style="margin-left: -3vh;">
                         </div>
@@ -133,7 +133,7 @@
             <div class="mdl-mini-footer__left-section">
                 <div class="mdl-logoi really-mini">Financé par le Labex EFL</div>
                 <div class="mdl-logoi really-mini">
-                    La plupart des oeuvres indexées proviennent de Gallica. Nous remercions les éditeurs Dalloz, PUF et Vrin pour avoir mis à notre disposition «Leçons sur la jurisprudence»,"Théorie des sentiments moraux» d’Adam Smith et «Le système de philosophie morale» de Francis Hutcheson. 
+                    La plupart des oeuvres indexées proviennent de Gallica. Nous remercions les éditeurs Dalloz, PUF et Vrin pour avoir mis à notre disposition «Leçons sur la jurisprudence», «Théorie des sentiments moraux» d’Adam Smith et «Le système de philosophie morale» de Francis Hutcheson. 
                 </div>
             </div>
         </footer>

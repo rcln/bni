@@ -94,6 +94,7 @@ nav.mdl-navigation {
 }
 
 .header-welcome {
+    cursor: pointer;
     height: 25vh !important;
 }
 
@@ -114,6 +115,7 @@ main .header-img-avatar {
 }
 
 .header-img-avatar--secondary {
+    cursor: pointer;
     display:flex;
 }
 
