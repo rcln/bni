@@ -36,8 +36,8 @@
  {"id": 231, "parent": 23, "label": "La valeur des marchandises"},
  {"id": 232, "parent": 23, "label": "La division sociale et l'\u00e9galit\u00e9"}
  ],
- "philosophie_politique": [
- {"id": 3, "label": "Philosophie Politique", "name": "philosophie_politique", "position": "root", "parent": null},
+ "epistemologie_et_esthetique": [
+ {"id": 3, "label": "Épistémologie et esthétique", "name": "epistemologie_et_esthetique", "position": "root", "parent": null},
  {"id": 31, "parent": 3, "label": "Histoire de l'astronomie"},
  {"id": 311, "parent": 31, "label": "La surprise"},
  {"id": 312, "parent": 31, "label": "Les liaisons imaginatives"},
@@ -47,8 +47,8 @@
  {"id": 322, "parent": 32, "label": "La musique"},
  {"id": 33, "parent": 3, "label": "L'origine du langage"}
  ],
- "epistemologie_et_esthetique": [
- {"id": 4, "label": "Épistémologie et esthétique", "name": "epistemologie_et_esthetique", "position": "root", "parent": null},
+"philosophie_politique": [
+ {"id": 4, "label": "Philosophie Politique", "name": "philosophie_politique", "position": "root", "parent": null},
  {"id": 41, "parent": 4, "label": "Sympathie et soci\u00e9t\u00e9"},
  {"id": 411, "parent": 41, "label": "La sociabilit\u00e9"},
  {"id": 412, "parent": 41, "label": "Les limites de la sympathie"},
