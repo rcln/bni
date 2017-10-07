@@ -53,14 +53,18 @@ function ontograph(start_node){
 
     d3.json(url_thesaurus, function(error, thesaurus) {
         if (error) throw error;
-        console.assert(thesaurus != {}, "Empty data.")
+        console.assert(thesaurus != {}, "Empty data.");
    
         var if_node_rigth = function(){ return true;}
 
         var term_list = {};
         for(var term in thesaurus){
-            for(var variant in thesaurus[term].variants){
-                term_list[thesaurus[term].variants[variant]] = thesaurus[term] ;
+            var thesaurus_term_variants = thesaurus[term].variants;
+            for(var variant in thesaurus_term_variants){
+                if(typeof term_list[thesaurus_term_variants[variant]] == "undefined"){
+                    if(thesaurus_term_variants[variant] == "justice") console.log("JUSTICE - SYMP", thesaurus[term]);
+                    term_list[thesaurus_term_variants[variant]] = thesaurus[term] ;
+                }
             }
         }
 
@@ -122,8 +126,18 @@ function ontograph(start_node){
                     main_start_node = start_node[sge];
                     max_length_term = start_node[sge].length;
                 }
+                console.log("terms in graph", thesaurus[term]);
+                var important_terms = ["punition"];
+                if("punition" == start_node[sge]){
+                    var very_important = node_in_ontology;
+                }
             }
         }
+        if(was_term_found && typeof(very_important) != "undefined"){
+            console.log("JUSTICE - SYMP", thesaurus[term]);
+            graph = very_important;
+        }
+
 
         //delete graph_extranodes[term_list[main_start_node]["id"]];
         console.log("GRAPH EXTRANODES", graph_extranodes);
