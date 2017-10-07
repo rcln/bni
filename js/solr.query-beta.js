@@ -23,16 +23,19 @@ function bnisolr(query_string){
     for(var qstr in query_string_list){
         var full_new_term = query_string_list[qstr].trim();
         var one_query_terms = full_new_term.split(/[\s]/);
+        for(var oqt in one_query_terms){
+            one_query_terms[oqt] = one_query_terms[oqt].replace(/[:.,]/gi, "").replace(/l'/gi, "");
+        }
         var filtered_word_list = one_query_terms.filter(function(w){
-                                return !(w == "" || stopwords_fr.hasOwnProperty(w.replace(/[:.,]/gi, "")));
+                                return !(w == "" || stopwords_fr.hasOwnProperty(w));
                             });
         if(filtered_word_list.length > 0){
             word_list_qs.push(full_new_term);
+            word_list_qs = word_list_qs.concat(filtered_word_list);
             if(filtered_word_list.length == 1){
-                multiterm_query += ' OR (' + full_new_term + ')';
+                multiterm_query += ' OR (' + filtered_word_list.join(' AND ') + ')';
             }else{
                 multiterm_query += ' OR ((' + filtered_word_list.join(' AND ') + ') OR "' + full_new_term + '")';
-                word_list_qs = word_list_qs.concat(filtered_word_list);
             }
         }
     }
