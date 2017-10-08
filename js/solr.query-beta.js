@@ -24,7 +24,7 @@ function bnisolr(query_string){
         var full_new_term = query_string_list[qstr].trim();
         var one_query_terms = full_new_term.split(/[\s]/);
         for(var oqt in one_query_terms){
-            one_query_terms[oqt] = one_query_terms[oqt].replace(/[:.,]/gi, "").replace(/l'/gi, "");
+            one_query_terms[oqt] = one_query_terms[oqt].replace(/[:.,]/gi, "").replace(/l'|les|sous/gi, "");
         }
         var filtered_word_list = one_query_terms.filter(function(w){
                                 return !(w == "" || stopwords_fr.hasOwnProperty(w));

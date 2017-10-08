@@ -155,9 +155,9 @@ function navigation(){
             });
 
         var whole_graph = g.selectAll(".node").filter(function(d, i){ return d.data.position === "root"? false : true; }).on("click", function(d) {
-            console.log(d);
+            console.log("Node click", d);
             navigation_subgraph(svg, d.data.name);
-            window.open("/bni/nav/#" + decodeURIComponent(d.data.name), "_self", false);
+            window.open("/bni/adam-smith/nav/#" + decodeURIComponent(d.data.name), "_self", false);
         });
 
         (function(){
@@ -270,7 +270,9 @@ function navigation_subgraph(svg, subgraph){
             });
 
         var whole_graph = g.selectAll(".node").on("click", function(d) {
-            window.open("/bni/search/" + decodeURIComponent(d.data.label.replace(/ /g, "+")), "_self", false);
+            console.log("Node click - subgraph", d.data.variants.join(", "));
+            var query_variants = (d.data.variants)? ", " + d.data.variants.join(", ") : "";
+            window.open("/bni/adam-smith/search/" + decodeURIComponent(d.data.label.replace(/ /g, "+") + query_variants), "_self", false);
         });
      
         $("#back-to-graph").show();
@@ -283,7 +285,7 @@ navigation();
 
 $(function(){
     $("#back-to-graph").click(function(){
-            window.open("/bni/nav/", "_self", false);
+            window.open("/bni/adam-smith/nav/", "_self", false);
     });
 });
 
