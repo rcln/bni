@@ -14,7 +14,7 @@ def concept_setdefault(concepts, concept):
                                     #"name": concept, 
                                     "parent": "", 
                                     #"children": set([]), 
-                                    #"variants": set([])
+                                    "variants": set([])
                                     })
 
 def concept_set_label(concepts, concept_id, labels, preflabels):
@@ -27,7 +27,7 @@ def concept_set_label(concepts, concept_id, labels, preflabels):
     except AssertionError:
         logging.error("Bad label. -- String: '{}', len: {}, '{}'".format(concept_id, label))
         exit(0)
-    #concepts[concept_id]["variants"] |= set([l.lower() for l in label_list])
+    concepts[concept_id]["variants"] |= set([l.lower() for l in label_list[1:]])
     concepts[concept_id]["label"] = label
 
 def concept_add_parent(concepts, _parent, _child):
@@ -46,6 +46,7 @@ def concepts_normalize(concepts):
     for k in concepts.keys():
         concepts[k]["parent"] = int(concepts[k]["parent"]) if concepts[k]["parent"] else None
         concepts[k]["id"] = int(concepts[k]["id"]) if concepts[k]["id"] else None
+        concepts[k]["variants"] = list(concepts[k]["variants"]) if concepts[k]["parent"] else None
         list_of_concepts.append(concepts[k]) 
     return list_of_concepts
 
@@ -106,6 +107,7 @@ def main():
         concept_id = concept_id[1:].replace(".", "")
         concept_variants_label = get_variants(concept_label_string) 
         concept_variants_preflabel = get_variants(concept_preflabel_string)
+        concept_variants_preflabel = []
         #print(current_parent_id, current_node_id)
         #print(get_variants(concept_label_string), get_variants(concept_preflabel_string))
         #concept_id = normalize_concept(attribute_name(concept))
