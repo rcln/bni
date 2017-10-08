@@ -22,7 +22,7 @@ function bnisolr(query_string){
     var word_list_qs = []
     for(var qstr in query_string_list){
         var full_new_term = query_string_list[qstr].trim();
-        var one_query_terms = full_new_term.split(/[\s]/);
+        var one_query_terms = full_new_term.split(/[\s'-]/g);
         for(var oqt in one_query_terms){
             one_query_terms[oqt] = one_query_terms[oqt].replace(/[:.,]/gi, "").replace(/l'|les|sous/gi, "");
         }
