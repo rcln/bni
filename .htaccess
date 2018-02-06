@@ -8,6 +8,16 @@ RewriteRule search-fh/(.+)/$ francis-hutcheson/query/index.php?query=$1 [L]
 RewriteRule search-fh/(.+)$ francis-hutcheson/query/index.php?query=$1 [L]
 RewriteRule search-fh/?$ / [R]
 
+RewriteRule search-fh-beta/(.+)/$ francis-hutcheson/query/index1.php?query=$1 [L]
+RewriteRule search-fh-beta/(.+)$ francis-hutcheson/query/index1.php?query=$1 [L]
+RewriteRule search-fh-beta/?$ / [R]
+
+RewriteRule search-as-beta/(.+)/$ query/index1.php?query=$1 [L]
+RewriteRule search-as-beta/(.+)$ query/index1.php?query=$1 [L]
+RewriteRule search-as-beta/?$ / [R]
+
+
+
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
     #Header set Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"

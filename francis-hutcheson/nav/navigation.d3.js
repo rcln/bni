@@ -271,7 +271,7 @@ function navigation_subgraph(svg, subgraph){
 
         var whole_graph = g.selectAll(".node").on("click", function(d) {
             console.log("Node click - subgraph", d.data.variants.join(", "));
-            var query_variants = (d.data.variants)? ", " + d.data.variants.join(", ") : "";
+            var query_variants = (d.data.variants.length)? ", " + d.data.variants.join(", ") : "";
             window.open("/bni/francis-hutcheson/search-fh/" + decodeURIComponent(d.data.label.replace(/ /g, "+") + query_variants), "_self", false);
         });
      
