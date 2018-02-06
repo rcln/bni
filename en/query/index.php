@@ -121,7 +121,7 @@
                                 <div class="mdl-card__title">
                                     <h4 class="mdl-card__title-text mdl-color-text--deep-orange-900">Philosophical concepts</h4>
                                 </div>
-                                <div class="mdl-card__media mdl-card__media--custom mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
+                                <div class="mdl-card__media mdl-card--expand mdl-shadow--2dp mdl-cell mdl-cell--12-col">
                                     <svg id="ontograph"></svg>
                                 </div> 
                             </div> 
@@ -131,9 +131,12 @@
         </main>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
-                <div class="mdl-logoi really-mini">Financé par le Labex EFL</div>
                 <div class="mdl-logoi really-mini">
-                    La plupart des oeuvres indexées proviennent de Gallica. Nous remercions les éditeurs Dalloz, PUF et Vrin pour avoir mis à notre disposition «Leçons sur la jurisprudence», «Théorie des sentiments moraux» d’Adam Smith et «Le système de philosophie morale» de Francis Hutcheson. 
+                    Financed by Labex EFL.<br>
+                </div>
+                <div class="mdl-logoi really-mini">
+                    Most of the indexed works come from Gallica. 
+                    We thank editors Dalloz, PUF and Vrin for putting at our disposal "Lessons on Jurisprudence", "Theory of Moral Sentiments" by Adam Smith and "The System of Moral Philosophy" by Francis Hutcheson.
                 </div>
             </div>
         </footer>

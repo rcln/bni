@@ -18,7 +18,7 @@
  {"id": 131, "parent": 13, "variants": [], "label": "Gen\u00e8se du spectateur impartial"},
  {"id": 132, "parent": 13, "variants": [], "label": "Les contradictions de la sympathie"},
  {"id": 133, "parent": 13, "variants": [], "label": "Le d\u00e9faut de sympathie"},
- {"id": 134, "parent": 13, "variants": ["l'amour des puissants", "la vanit\u00e9"], "label": "L'exc\u00e8s of sympathie"}
+ {"id": 134, "parent": 13, "variants": ["l'amour des puissants", "la vanit\u00e9"], "label": "L'exc\u00e8s de sympathie"}
  ],
  "economie": [
  {"id": 2, "label": "Economie", "name": "economie", "position": "root", "parent": null, "variants": []},

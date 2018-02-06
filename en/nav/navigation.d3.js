@@ -40,7 +40,7 @@ function navigation(){
         .id(function(d) { return d.id; })
         .parentId(function(d) { return d.parent; });
     
-    d3.json("nav/adamsmithnav.json", function(error, data) {
+    d3.json("nav/adamsmithnav-en.json", function(error, data) {
         if (error) throw error;
         console.assert(data != {}, "Empty data.")
    
@@ -212,7 +212,7 @@ function navigation_subgraph(svg, subgraph){
         .id(function(d) { return d.id; })
         .parentId(function(d) { return d.parent; });
     
-    d3.json("nav/adamsmithnav-subnodes.json", function(error, data) {
+    d3.json("nav/adamsmithnav-subnodes-en.json", function(error, data) {
         if (error) throw error;
         console.assert(data != {}, "Empty data.")
    

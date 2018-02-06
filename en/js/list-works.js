@@ -1,6 +1,6 @@
 $(function(){
     $.get(bnicfg.url_to_source_beta + bnicfg.url_get_works 
-            + " AND lang:fr AND type:primary_literature "
+            + " AND lang:en AND type:primary_literature "
             + " AND author:" + default_author,
         function(data){
             var works = data.grouped.file_name_hash.groups;

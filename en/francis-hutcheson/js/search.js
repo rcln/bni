@@ -11,7 +11,7 @@ $(function(){
             $("#query").focus();
             $("#query").attr("placeholder", "Ne le laissez pas vide!");
         }else{
-            window.open("/bni/francis-hutcheson/search-fh/" + query_string, "_self", false);
+            window.open("francis-hutcheson/search-fh/" + query_string, "_self", false);
         }
     });
 });

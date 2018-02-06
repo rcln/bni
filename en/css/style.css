@@ -159,6 +159,7 @@ main .header-img-avatar {
 .main-title-container {
     display: block;
     text-align: center; 
+    margin-left: 10px;
 }
 
 .main-title-dates {

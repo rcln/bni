@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <base href="/bni/" />
+    <base href="/bni/en/" />
     <meta charset="utf-8">
     <title>Bibliothèque Numérique des Idées</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +12,8 @@
 </head>
 <body class="sticky-footer">
     <div class="container mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
-        <header class="header-welcome mdl-layout__header" onClick="window.open('/bni/', '_self');" >
-            <h4 class="center welcome">Bienvenue dans la Bibliothèque Numérique des Idées</h4>
+        <header class="header-welcome mdl-layout__header" onClick="window.open('/bni/en/', '_self');">
+            <h4 class="center welcome">Welcome to the Digital Library of Ideas</h4>
             <!--div class="mdl-layout__header-row">
                 <span class="mdl-layout-title"></span>
                 <div class="mdl-layout-spacer"></div>
@@ -33,36 +33,39 @@
                         <h5 class="main-title-dates">1694 - 1746</h6>
                     </div>
                     <div>
-                        <a class="mdl-color-text--green-900" href="/bni/francis-hutcheson/oeuvres/">
+                        <a class="mdl-color-text--green-900" href="francis-hutcheson/oeuvres/">
                         <label class="mdl-button mdl-js-button mdl-button--icon">
                             <i class="material-icons">chrome_reader_mode</i>
                         </label>
-                        Liste des œuvres</a>
+                        List of works</a>
                     </div>
                 </div>
             </div>
-            <form action="/bni/francis-hutcheson/search-fh/" class="search search--primary" autocomplete="off">
+            <form action="francis-hutcheson/search-fh/" class="search search--primary" autocomplete="off">
                 <div class="mdl-textfield mdl-js-textfield">
-                    <input id="query" class="mdl-textfield__input query-welcome" type="text" placeholder="Recherche ...">
+                    <input id="query" class="mdl-textfield__input query-welcome" type="text" placeholder="Search ...">
                 </div>
                 <button id="search" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
                     <label class="mdl-button mdl-js-button mdl-button--icon">
                         <i class="material-icons">search</i>
                     </label>
-                    Chercher
+                    Search
                 </button>
                 <br />
                     <div class="mdl-textfield mdl-js-textfield" style="visibility: hidden;">
                         <input class="mdl-textfield__input" type="text" style="visibility: hidden;" >
                     </div>
-                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="/bni/francis-hutcheson/nav/" style="margin-left: -26px;">Naviguer</a>
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="francis-hutcheson/nav/" style="margin-left: -16px;">Browse</a>
             </form>
         </main>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
-                <div class="mdl-logoi really-mini">Financé par le Labex EFL</div>
                 <div class="mdl-logoi really-mini">
-                    La plupart des oeuvres indexées proviennent de Gallica. Nous remercions les éditeurs Dalloz, PUF et Vrin pour avoir mis à notre disposition «Leçons sur la jurisprudence», «Théorie des sentiments moraux» d’Adam Smith et «Le système de philosophie morale» de Francis Hutcheson. 
+                    Financed by Labex EFL.<br>
+                </div>
+                <div class="mdl-logoi really-mini">
+                    Most of the indexed works come from Gallica. 
+                    We thank editors Dalloz, PUF and Vrin for putting at our disposal "Lessons on Jurisprudence", "Theory of Moral Sentiments" by Adam Smith and "The System of Moral Philosophy" by Francis Hutcheson.
                 </div>
             </div>
         </footer>
