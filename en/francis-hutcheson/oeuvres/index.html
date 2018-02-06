@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/bni/" />
+    <meta charset="utf-8">
+    <title>Bibliothèque Numérique des Idées</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/mdl/material.min.css">
+    <script src="css/mdl/material.min.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery-1.10.2.js"></script>
+
+    <script src="js/bni-config.js"></script>
+    <script>
+        var default_author_id = "francis-hutcheson"; 
+        var default_author = "Francis Hutcheson"; 
+        var default_author_ref = "de Francis Hutcheson"; 
+    </script>
+
+    <style>
+    footer.mdl-mini-footer {
+        padding: 32px 16px !important;
+    }
+    h4.welcome, header.header {
+
+    }
+    </style>
+</head>
+<body class="sticky-footer">
+    <div class="container mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
+        <header class="header mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">
+                    <a href="/bni/">Bienvenue dans la Bibliothèque Numérique des Idées</a>
+                </span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                </nav>
+            </div>
+        </header>
+        <main class="content content-flex">
+                <div class="mdl-grid">
+                    <div class="mdl-cell--6-col">
+                        <div class="header-img-avatar--secondary" onClick="window.open('/bni/francis-hutcheson/', '_self');" >
+                            <div class="img-container">
+                                <img class="img-avatar--secondary" src="francis-hutcheson.jpg" style="margin-left: -3vh;">
+                            </div>
+                            <h6 class="main-title--secondary">Immersion dans l'oeuvre de <br>Francis HUTCHESON</h6>
+                        </div>
+                    </div>
+                    <div class="mdl-cell--6-col">
+                        <form action="/bni/francis-hutcheson/search-fh/" class="search search--secondary" autocomplete="off">
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input id="query" class="mdl-textfield__input" type="text" placeholder="Recherche">
+                            </div>
+                            <button id="search" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                                <label class="mdl-button mdl-js-button mdl-button--icon">
+                                    <i class="material-icons">search</i>
+                                </label>
+                                Chercher
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <div class="mdl-card mdl-card__supporting-text mdl-cell--12-col">
+                            <div class="mdl-card__title">
+                                <h4 class="mdl-card__title-text mdl-color-text--deep-orange-900">Œuvres indexées</h4>
+                            </div>
+                            <div class="mdl-card mdl-shadow--2dp mdl-cell--12-col">
+                                <div class="mdl-card__title">
+                                    <h2 class="mdl-card__title-text mdl-color-text--black">Francis Hutcheson</h2>
+                                </div>
+                                <ul id="oeuvres"></ul>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+        </main>
+        <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logoi really-mini">Financé par le Labex EFL</div>
+                <div class="mdl-logoi really-mini">
+                    La plupart des oeuvres indexées proviennent de Gallica. Nous remercions les éditeurs Dalloz, PUF et Vrin pour avoir mis à notre disposition «Leçons sur la jurisprudence», «Théorie des sentiments moraux» d’Adam Smith et «Le système de philosophie morale» de Francis Hutcheson. 
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="francis-hutcheson/js/search.js"></script>
+    <script src="js/list-works.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<dataConfig>
+    <script>
+        <![CDATA[
+            id = 1;
+            function f_entity(el) {
+                el.id = (id++).toFixed();;
+                return el;
+            }
+        ]]>
+    </script>
+    <dataSource type="FileDataSource" />
+    <document>
+        <entity name="oeuvres" 
+                processor="FileListEntityProcessor"
+                baseDir="/opt/solr/server/solr/mycores/bibliotheque/conf/litterature/xml/" 
+                fileName=".*\.xml$"
+                onError="skip"
+                recursive="true"  
+                rootEntity="false">
+                <!-- field column="fileAbsolutePath" name="id" / -->
+                <field column="fileLastModified" name="last_modified" />
+                <!-- field column="resourceName" name="file_name" xpath="/html/head/meta[@name='resourceName']/@content" commonField="true" / -->
+                <!-- field column="Author" name="author" xpath="/html/head/meta[@name='Author']/@content" /-->
+                <entity name="documentImport"
+                        processor="XPathEntityProcessor"
+                        url="${oeuvres.fileAbsolutePath}" 
+                        forEach="/html/body/div/p"
+                        rootEntity="true" 
+                        transformer="script:f_entity">
+                        <field column="p" name="p" xpath="/html/body/div/p" />
+                        <field column="page" name="page" xpath="/html/body/div/p/@page" />
+                        <field column="file_name" name="file_name" xpath="/html/body/div/p/@file_name" />
+                        <field column="file_name_hash" name="file_name_hash" xpath="/html/body/div/p/@file_name_hash" />
+                        <field column="page_hash" name="page_hash" xpath="/html/body/div/p/@page_hash" />
+                        <field column="title" name="title" xpath="/html/body/div/p/@title" />
+                        <field column="skip" name="skip" xpath="/html/body/div/p/@skip" />
+                        <field column="lang" name="lang" xpath="/html/body/div/p/@book_lang" />
+                        <field column="type" name="type" xpath="/html/body/div/p/@book_type" />
+                        <field column="author" name="author" xpath="/html/body/div/p/@author" />
+                        <field column="author-label" name="author-label" xpath="/html/body/div/p/@author-label" />
+                        <!-- field column="type" name="type" xpath="/html/head/meta[@name='type']/@content" commonField="true" /-->
+                        <!--field column="section" name="section" xpath="/html/body/div/p[@class='section']" commonField="true"/>
+                        <field column="chapter" name="chapter" xpath="/html/body/div/p[@class='chapter']" commonField="true"/>
+                        <field column="category" name="category" xpath="/html/body/div/p/@category"/-->
+                </entity>
+        </entity>
+    </document>
+</dataConfig>

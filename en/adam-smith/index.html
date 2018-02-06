@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/bni/en/" />
+    <meta charset="utf-8">
+    <title>Bibliothèque Numérique des Idées</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/mdl/material.min.css">
+    <script src="css/mdl/material.min.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="sticky-footer">
+    <div class="container mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-drawer-button">
+        <header class="header-welcome mdl-layout__header" onClick="window.open('/bni/en/', '_self');">
+            <h4 class="center welcome">Welcome to the Digital Library of Ideas</h4>
+            <!--div class="mdl-layout__header-row">
+                <span class="mdl-layout-title"></span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation">
+                    <img class="adam" src="adam-smith.jpg">
+                </nav>
+            </div-->
+        </header>
+        <main class="content content-flex mdl-layout__content">
+            <div class="header-img-avatar">
+                <div class="img-container">
+                    <img class="img-avatar" src="adam-smith.jpg" style="margin-left: -4vh;">
+                </div>
+                <div class="main-title-container">
+                    <div>
+                        <h3 class="center main-title">Adam Smith</h3>
+                        <h5 class="main-title-dates">1723 - 1790</h6>
+                    </div>
+                    <div>
+                        <a class="mdl-color-text--green-900" href="adam-smith/oeuvres/">
+                        <label class="mdl-button mdl-js-button mdl-button--icon">
+                            <i class="material-icons">chrome_reader_mode</i>
+                        </label>
+                        List of works</a>
+                    </div>
+                </div>
+            </div>
+            <form action="adam-smith/search/" class="search search--primary" autocomplete="off">
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input id="query" class="mdl-textfield__input query-welcome" type="text" placeholder="Search ...">
+                </div>
+                <button id="search" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                    <label class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="material-icons">search</i>
+                    </label>
+                    Search
+                </button>
+                <br />
+                    <div class="mdl-textfield mdl-js-textfield" style="visibility: hidden;">
+                        <input class="mdl-textfield__input" type="text" style="visibility: hidden;" >
+                    </div>
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="adam-smith/nav/" style="margin-left: -16px;">Browse</a>
+            </form>
+        </main>
+        <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logoi really-mini">Financé par le Labex EFL</div>
+                <div class="mdl-logoi really-mini">
+                    La plupart des oeuvres indexées proviennent de Gallica. Nous remercions les éditeurs Dalloz, PUF et Vrin pour avoir mis à notre disposition «Leçons sur la jurisprudence», «Théorie des sentiments moraux» d’Adam Smith et «Le système de philosophie morale» de Francis Hutcheson. 
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

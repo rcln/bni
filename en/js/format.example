@@ -1,0 +1,44 @@
+/**** nodes ****/
+
+[   
+    {id: 'Abundance', label:'abundance'},
+    {id: 'Accordance', label:'accordance'},
+    {id: 'Acquaintance', label:'acquaintance'},
+    {id: 'Action', label:'action'},
+    {id: 'Admiration', label:'admiration'},
+    {id: 'Affection', label:'affection'},
+    {id: 'Ages', label:'Ages'},
+    {id: 'Appearance', label:'Appearance'},
+    {id: 'Approbation', label:'approbation'},
+    {id: 'Aristocracy', label:'aristocracy'},
+    {id: 'Army', label:'army'},
+    {id: 'Astronomy', label:'Astronomy'},
+    {id: 'Attention', label:'attention'},
+    {id: 'Augmentation', label:'Augmentation'},
+    {id: 'Benefice', label:'benefice'},
+    {id: 'Benevolence', label:'benevolence'},
+    {id: 'Cannon_law', label:'cannon law'},
+    {id: 'Child', label:'Child'}
+]
+
+
+/**** edges ****/
+
+[
+    {from: 'Action', to: 'Conduct'},
+    {from: 'Action', to: 'Consequence'},
+    {from: 'Action', to: 'Irregularity'},
+    {from: 'Action', to: 'motive'},
+    {from: 'Approbation', to: 'prudence'},
+    {from: 'Astronomy', to: 'Attention'},
+    {from: 'Astronomy', to: 'Surprise'},
+    {from: 'Astronomy', to: 'admiration'},
+    {from: 'Citizen', to: 'Obedience'},
+    {from: 'Conscience', to: 'Error'},
+    {from: 'Conscience', to: 'ignorance'},
+    {from: 'Contract', to: 'Consent'},
+    {from: 'Contract', to: 'Obligation'},
+    {from: 'Contract', to: 'Promise'},
+    {from: 'Contract', to: 'deal'}
+]
+

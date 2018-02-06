@@ -1,0 +1,7 @@
+*.sw*
+*pdf.xml
+*docx.xml
+*doc.xml
+*odt.xml
+*.tar.gz
+*.tar.bz2

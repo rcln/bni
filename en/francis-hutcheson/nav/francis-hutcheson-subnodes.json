@@ -1,0 +1,47 @@
+{
+ "philosophie_morale": [
+ {"id": 1, "parent": null, "label": "Philosophie morale", "name": "philosophie_morale", "position": "root", "variants": []},
+ {"id": 11, "parent": 1, "variants": ["le sens moral"], "label": "La facult\u00e9 morale"},
+ {"id": 111, "parent": 11, "variants": [], "label": "Sens et sentiment"},
+ {"id": 112, "parent": 11, "variants": ["sens interne"], "label": "Sens externes"},
+ {"id": 113, "parent": 11, "variants": [], "label": "Sens de la beaut\u00e9"},
+ {"id": 12, "parent": 1, "variants": [], "label": "La bienveillance"},
+ {"id": 121, "parent": 12, "variants": [], "label": "Uniformit\u00e9 dans la vari\u00e9t\u00e9"},
+ {"id": 122, "parent": 12, "variants": [], "label": "Bienveillance et amour de soi"},
+ {"id": 123, "parent": 12, "variants": [], "label": "Critique de l\u2019\u00e9go\u00efsme"},
+ {"id": 124, "parent": 12, "variants": [], "label": "Motif et mobile"},
+ {"id": 125, "parent": 12, "variants": [], "label": "Plaisir et motif"},
+ {"id": 13, "parent": 1, "variants": [], "label": "Le jugement moral"},
+ {"id": 131, "parent": 13, "variants": [], "label": "Approbation"},
+ {"id": 132, "parent": 13, "variants": [], "label": "Critique du rationalisme"}
+ ],
+ "theologie": [
+ {"id": 2, "parent": null, "label": "Th\u00e9ologie", "name": "theologie", "position": "root", "variants": []},
+ {"id": 21, "parent": 2, "variants": [], "label": "Preuves de l\u2019existence de dieu"},
+ {"id": 22, "parent": 2, "variants": [], "label": "La providence"},
+ {"id": 23, "parent": 2, "variants": [], "label": "Le syst\u00e8me"}
+ ],
+ "le_droit": [
+ {"id": 3, "parent": null, "label": "Le droit", "name": "le_droit", "position": "root", "variants": []},
+ {"id": 31, "parent": 3, "variants": ["droit imparfait"], "label": "Droit parfait"},
+ {"id": 32, "parent": 3, "variants": [], "label": "Les cat\u00e9gories du droit"},
+ {"id": 321, "parent": 32, "variants": ["droits personnels"], "label": "Droits r\u00e9els"}
+ ],
+ "economie": [
+ {"id": 4, "parent": null, "label": "\u00c9conomie", "name": "economie", "position": "root", "variants": []},
+ {"id": 41, "parent": 4, "variants": [], "label": "La propri\u00e9t\u00e9"},
+ {"id": 42, "parent": 4, "variants": [], "label": "Les contrats"},
+ {"id": 421, "parent": 42, "variants": [], "label": "Le mariage"},
+ {"id": 422, "parent": 42, "variants": [], "label": "Ma\u00eetre et serviteur"},
+ {"id": 43, "parent": 4, "variants": [], "label": "Les serments"},
+ {"id": 44, "parent": 4, "variants": [], "label": "La monnaie"}
+ ],
+ "politique": [
+ {"id": 5, "parent": null, "label": "Politique", "name": "politique", "position": "root", "variants": []},
+ {"id": 51, "parent": 5, "variants": [], "label": "La souverainet\u00e9"},
+ {"id": 511, "parent": 51, "variants": [], "label": "Institution"},
+ {"id": 512, "parent": 51, "variants": [], "label": "Limites de la souverainet\u00e9"},
+ {"id": 513, "parent": 51, "variants": [], "label": "Le droit de d\u00e9sob\u00e9issance"},
+ {"id": 52, "parent": 5, "variants": [], "label": "Les formes de gouvernement"}
+ ]}
+
