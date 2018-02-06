@@ -1,6 +1,6 @@
 var stopwords_fr = {};
 $.ajax({
-    url: bnicfg.url_stopwords_fr,
+    url: bnicfg.url_stopwords_en,
     async: false,
     dataType: 'json',
     success: function (response) {

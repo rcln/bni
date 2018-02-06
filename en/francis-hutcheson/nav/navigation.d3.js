@@ -40,7 +40,7 @@ function navigation(){
         .id(function(d) { return d.id; })
         .parentId(function(d) { return d.parent; });
     
-    d3.json("francis-hutcheson/nav/francis-hutcheson.json", function(error, data) {
+    d3.json("francis-hutcheson/nav/francis-hutcheson-en.json", function(error, data) {
         if (error) throw error;
         console.assert(data != {}, "Empty data.")
    
@@ -157,7 +157,7 @@ function navigation(){
         var whole_graph = g.selectAll(".node").filter(function(d, i){ return d.data.position === "root"? false : true; }).on("click", function(d) {
             console.log(d);
             navigation_subgraph(svg, d.data.name);
-            window.open("/bni/francis-hutcheson/nav/#" + decodeURIComponent(d.data.name), "_self", false);
+            window.open("francis-hutcheson/nav/#" + decodeURIComponent(d.data.name), "_self", false);
         });
 
         (function(){
@@ -212,7 +212,7 @@ function navigation_subgraph(svg, subgraph){
         .id(function(d) { return d.id; })
         .parentId(function(d) { return d.parent; });
     
-    d3.json("francis-hutcheson/nav/francis-hutcheson-subnodes.json", function(error, data) {
+    d3.json("francis-hutcheson/nav/francis-hutcheson-subnodes-en.json", function(error, data) {
         if (error) throw error;
         console.assert(data != {}, "Empty data.")
    
@@ -272,7 +272,7 @@ function navigation_subgraph(svg, subgraph){
         var whole_graph = g.selectAll(".node").on("click", function(d) {
             console.log("Node click - subgraph", d.data.variants.join(", "));
             var query_variants = (d.data.variants.length)? ", " + d.data.variants.join(", ") : "";
-            window.open("/bni/francis-hutcheson/search-fh/" + decodeURIComponent(d.data.label.replace(/ /g, "+") + query_variants), "_self", false);
+            window.open("francis-hutcheson/search-fh/" + decodeURIComponent(d.data.label.replace(/ /g, "+") + query_variants), "_self", false);
         });
      
         $("#back-to-graph").show();
@@ -285,7 +285,7 @@ navigation();
 
 $(function(){
     $("#back-to-graph").click(function(){
-            window.open("/bni/francis-hutcheson/nav/", "_self", false);
+            window.open("francis-hutcheson/nav/", "_self", false);
     });
 });
 
