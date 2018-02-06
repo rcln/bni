@@ -1,0 +1,47 @@
+{
+ "philosophie_morale": [
+ {"id": 1, "parent": null, "label": "Moral philosophy", "name": "philosophie_morale", "position": "root", "variants": []},
+{"id": 11, "parent": 1, "variants": ["moral sense"], "label": "Moral faculty"},
+ {"id": 111, "parent": 11, "variants": [], "label": "Sense and sentiment"},
+ {"id": 112, "parent": 11, "variants": ["internal senses"], "label": "External senses"},
+ {"id": 113, "parent": 11, "variants": [], "label": "Sense of beauty"},
+ {"id": 12, "parent": 1, "variants": ["goodwill"], "label": "Benevolence"},
+ {"id": 121, "parent": 12, "variants": [], "label": "Uniformity in variety"},
+ {"id": 122, "parent": 12, "variants": [], "label": "Benevolence and self-love"},
+ {"id": 123, "parent": 12, "variants": [], "label": "Selfishness criticism"},
+ {"id": 124, "parent": 12, "variants": [], "label": "Motive"},
+ {"id": 125, "parent": 12, "variants": [], "label": "Pleasure and motive"},
+ {"id": 13, "parent": 1, "variants": [], "label": "Moral judgment"},
+ {"id": 131, "parent": 13, "variants": [], "label": "Approbation"},
+ {"id": 132, "parent": 13, "variants": [], "label": "Rationalism criticism"}
+ ],
+ "theologie": [
+ {"id": 2, "parent": null, "label": "Religion", "name": "theologie", "position": "root", "variants": []},
+ {"id": 21, "parent": 2, "variants": [], "label": "Proofs of the existence of god"},
+ {"id": 22, "parent": 2, "variants": [], "label": "Providence"},
+ {"id": 23, "parent": 2, "variants": [], "label": "System"}
+ ],
+ "le_droit": [
+ {"id": 3, "parent": null, "label": "Right", "name": "le_droit", "position": "root", "variants": []},
+ {"id": 31, "parent": 3, "variants": ["imperfect right"], "label": "Perfect right"},
+ {"id": 32, "parent": 3, "variants": ["claim"], "label": "Right"},
+ {"id": 321, "parent": 32, "variants": ["personal rights"], "label": "Real rights"}
+ ],
+ "economie": [
+ {"id": 4, "parent": null, "label": "Economy", "name": "economie", "position": "root", "variants": []},
+ {"id": 41, "parent": 4, "variants": [], "label": "Propriety"},
+ {"id": 42, "parent": 4, "variants": [], "label": "Contracts"},
+ {"id": 421, "parent": 42, "variants": [], "label": "Marriage"},
+ {"id": 422, "parent": 42, "variants": [], "label": "Masters and servants"},
+ {"id": 43, "parent": 4, "variants": [], "label": "Oaths"},
+ {"id": 44, "parent": 4, "variants": [], "label": "Monney"}
+ ],
+ "politique": [
+ {"id": 5, "parent": null, "label": "Politics", "name": "politique", "position": "root", "variants": []},
+ {"id": 51, "parent": 5, "variants": [], "label": "Sovereignty"},
+ {"id": 511, "parent": 51, "variants": [], "label": "Institution"},
+ {"id": 512, "parent": 51, "variants": [], "label": "Sovereignty extent"},
+ {"id": 513, "parent": 51, "variants": [], "label": "Disobedience right"},
+ {"id": 52, "parent": 5, "variants": [], "label": "Plan of government"}
+ ]}
+
