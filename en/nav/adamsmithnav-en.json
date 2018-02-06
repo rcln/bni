@@ -1,0 +1,7 @@
+[
+    {"id": 0, "label": "Adam Smith",                                 "name": "adam_smith", "position": "root",  "parent": null, "image": "adam-smith.jpg" },
+    {"id": 1, "label": "Moral philosophy",                         "name": "philosophie_morale", "position": "rigth", "parent": 0},     
+    {"id": 2, "label": "Economy",                                   "name": "economie", "position": "rigth", "parent": 0},     
+    {"id": 3, "label": "Epistemology and aesthetics", "name": "epistemologie_et_esthetique", "position": "left",  "parent": 0},
+    {"id": 4, "label": "Political philosophy",                     "name": "philosophie_politique", "position": "left",  "parent": 0}
+]
